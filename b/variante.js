@@ -178,9 +178,11 @@
       "?autoplay=1&mute=1&loop=1&playlist=" + id + "&controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1";
     var ajustarReel = function () {
       var w = reel.clientWidth, h = reel.clientHeight;
-      // Cubrir todo el bloque manteniendo 16:9 (el sobrante queda fuera de cuadro)
-      if (w / h > 16 / 9) { iframe.style.width = w + "px"; iframe.style.height = Math.ceil(w * 9 / 16) + "px"; }
-      else { iframe.style.height = h + "px"; iframe.style.width = Math.ceil(h * 16 / 9) + "px"; }
+      // Cubrir todo el bloque manteniendo 16:9. Se agranda un 25% extra para que
+      // el título y los controles de YouTube queden fuera de cuadro.
+      var extra = 1.25;
+      if (w / h > 16 / 9) { iframe.style.width = Math.ceil(w * extra) + "px"; iframe.style.height = Math.ceil(w * extra * 9 / 16) + "px"; }
+      else { iframe.style.height = Math.ceil(h * extra) + "px"; iframe.style.width = Math.ceil(h * extra * 16 / 9) + "px"; }
     };
     ajustarReel();
     window.addEventListener("resize", ajustarReel);
@@ -188,6 +190,23 @@
     iframe.addEventListener("load", function () { setTimeout(function () { iframe.classList.add("listo"); }, 1800); });
     reel.insertBefore(iframe, reel.querySelector(".reel-portada__contenido"));
   }
+
+  /* ---------- Selector de tipografía (solo para comparar) ---------- */
+  var botonesLetra = document.querySelectorAll("[data-letra]");
+  function marcarLetra() {
+    var actual = document.documentElement.dataset.fuente || "actual";
+    botonesLetra.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.letra === actual)); });
+  }
+  botonesLetra.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var v = b.dataset.letra;
+      if (v === "actual") delete document.documentElement.dataset.fuente;
+      else document.documentElement.dataset.fuente = v;
+      try { localStorage.setItem("sinapsis-letra", v); } catch (e) {}
+      marcarLetra();
+    });
+  });
+  marcarLetra();
 
   /* ---------- Reproductor ---------- */
   var reproductor = document.getElementById("reproductor");

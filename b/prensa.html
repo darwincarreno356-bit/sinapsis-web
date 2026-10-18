@@ -11,6 +11,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Open+Sans:wght@700&display=swap">
   <link rel="stylesheet" href="../css/estilos.css">
   <link rel="stylesheet" href="estilos-b.css">
+  <!-- Pruebas de tipografía: Antonio, Inter Tight, Barlow, Barlow Condensed, Big Shoulders Display, Hanken Grotesk -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@200;400&family=Inter+Tight:wght@300;400;500&family=Barlow+Condensed:wght@300;500&family=Barlow:wght@300;400;500&family=Big+Shoulders+Display:wght@300;600&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="tipografias.css">
+  <script>
+    // Aplica la letra elegida antes de dibujar la página (por defecto, la opción 1)
+    (function () { var f = "1"; try { f = localStorage.getItem("sinapsis-letra") || "1"; } catch (e) {}
+      if (f !== "actual") document.documentElement.dataset.fuente = f; })();
+  </script>
 </head>
 <body class="pagina-interna">
 
@@ -81,9 +89,16 @@
 </footer>
 
 <!-- Etiqueta para comparar versiones (se quita al publicar) -->
-<nav class="etiqueta-variante" aria-label="Comparar versiones">
+<div class="etiqueta-variante" role="region" aria-label="Comparar versiones y tipografías">
   <a href="../index.html">Versión A</a><span>Versión B</span>
-</nav>
+  <div class="selector-letra" role="group" aria-label="Probar tipografías">
+    <span class="selector-letra__titulo">Letra</span>
+    <button type="button" data-letra="actual" aria-pressed="false">Actual</button>
+    <button type="button" data-letra="1" aria-pressed="false">1</button>
+    <button type="button" data-letra="2" aria-pressed="false">2</button>
+    <button type="button" data-letra="3" aria-pressed="false">3</button>
+  </div>
+</div>
 
 <dialog class="reproductor" id="reproductor" aria-labelledby="reproductor-titulo">
   <div class="reproductor__caja">
