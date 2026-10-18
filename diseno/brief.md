@@ -30,7 +30,7 @@ Versión 1 · 18/10/2026 · Basado en las referencias que eligió Darwin.
 **Tomar**
 - **Negro de fondo con las imágenes de los proyectos como protagonistas.** El color de la marca (el magenta en Banijay, el celeste en Sinapsis) aparece en detalles: un punto, una barra, el ítem activo del menú.
 - **Video de portada** con una frase corta encima.
-- **Miniaturas en movimiento, limpias y bien organizadas.**
+- **Cómo se presentan y reproducen los videos y las miniaturas**, igual que en Canada: en movimiento, limpias y bien organizadas.
 - **Menú arriba a la derecha** con pocas secciones claras.
 
 **No tomar (por ahora)**
