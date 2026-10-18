@@ -6,6 +6,8 @@ fondo azul, sin placa.
   con el filtro desaparecen: acá se pintan sus colores de blanco y sus blancos
   del azul de fondo, para que el dibujo se siga leyendo.
 - América TV viene sobre fondo blanco: acá se vuelve transparente ese fondo.
+- El Nueve (logo actual) trae el texto en blanco: para las placas blancas de la
+  versión A se hace una copia con el texto oscuro.
 
 Uso: python3 scripts/logos-blanco.py
 """
@@ -94,6 +96,20 @@ def fondo_blanco_a_transparente(origen, destino, cortar_en_cuatro=False):
     print("→", destino)
 
 
+def texto_blanco_a_oscuro(origen, destino):
+    """Para placas blancas (versión A): el texto blanco del logo pasa a azul oscuro."""
+    ancho, alto, filas = leer_png(os.path.join(DIR, origen))
+    oscuro = bytes(int(FONDO[i:i + 2], 16) for i in (1, 3, 5))
+    for f in filas:
+        for x in range(ancho):
+            r, g, b, a = f[x * 4:x * 4 + 4]
+            if a > 0 and min(r, g, b) > 200:
+                f[x * 4:x * 4 + 3] = oscuro
+    escribir_png(os.path.join(DIR, destino), ancho, alto, filas)
+    print("→", destino)
+
+
 svg_en_blanco("tv-publica.svg", "tv-publica-blanco.svg")
 svg_en_blanco("pakapaka.svg", "pakapaka-blanco.svg")
 fondo_blanco_a_transparente("america-tv.png", "america-tv-transparente.png", cortar_en_cuatro=True)
+texto_blanco_a_oscuro("el-nueve-2026.png", "el-nueve-2026-oscuro.png")
