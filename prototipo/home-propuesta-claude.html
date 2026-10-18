@@ -1,0 +1,437 @@
+<title>Sinapsis Producción · Nueva home</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sala de proyección. Fondo tinta azulada, el Venn del logo como motivo,
+   fichas de producción con datos técnicos estilo claqueta (formato, canal, año). */
+:root{
+  color-scheme: dark;
+  --ink:#070b14;        /* fondo */
+  --ink-2:#0d1422;      /* bandas */
+  --ink-3:#152036;      /* superficies */
+  --line:#22304a;
+  --fg:#eef3fb;
+  --muted:#9fb0c9;
+  --sky:#35a3e8;        /* azul claro del logo */
+  --deep:#1466c8;       /* azul profundo del logo */
+  --navy:#0b3d91;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.02;text-wrap:balance;margin:0;letter-spacing:.005em}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);margin:0}
+:focus-visible{outline:2px solid var(--sky);outline-offset:3px;border-radius:4px}
+
+/* Aviso de prototipo */
+.proto{background:var(--deep);color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-align:center;padding-block:7px}
+
+/* Header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;gap:28px;padding-block:12px}
+.logo img{display:block;height:54px;width:auto}
+nav.main{display:flex;gap:26px;margin-left:auto;font-weight:500;font-size:15.5px}
+nav.main a{text-decoration:none;color:var(--muted);transition:color .2s}
+nav.main a:hover{color:var(--fg)}
+.lang{font-family:var(--mono);font-size:12.5px;color:var(--muted);display:flex;gap:6px}
+.lang b{color:var(--fg);font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:15.5px;text-decoration:none;border-radius:999px;padding:12px 22px;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--sky);color:#04121f}
+.btn-primary:hover{background:#5cb8f0}
+.btn-ghost{border-color:var(--line);color:var(--fg);background:transparent}
+.btn-ghost:hover{border-color:var(--sky)}
+.btn-sm{padding:9px 18px;font-size:14.5px}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--fg);border-radius:10px;padding:8px 12px;font:inherit;font-size:14px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-block:88px 96px}
+.hero h1{font-size:clamp(46px,7.2vw,96px);text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--sky)}
+.hero p.lead{font-size:19.5px;color:var(--muted);max-width:34em;margin:24px 0 34px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.play{width:28px;height:28px;border-radius:50%;background:#04121f;display:grid;place-items:center}
+.play::before{content:"";border-left:9px solid var(--sky);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:2px}
+.venn{position:relative;aspect-ratio:1;max-width:100%;width:440px;justify-self:end}
+.venn span{position:absolute;width:62%;aspect-ratio:1;border-radius:50%;mix-blend-mode:screen}
+.venn .c1{left:0;top:0;background:radial-gradient(circle at 35% 35%,#4bb3f0,#1a76cf 70%);opacity:.85;animation:drift1 14s ease-in-out infinite}
+.venn .c2{right:0;top:0;background:radial-gradient(circle at 60% 35%,#3a9ae6,#0f57b8 70%);opacity:.75;animation:drift2 16s ease-in-out infinite}
+.venn .c3{left:19%;bottom:0;background:radial-gradient(circle at 50% 60%,#2f8fe0,#0b3d91 70%);opacity:.8;animation:drift3 18s ease-in-out infinite}
+.venn .tag{position:absolute;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;mix-blend-mode:normal;width:auto;aspect-ratio:auto;border-radius:0}
+.venn .t1{left:12%;top:24%}.venn .t2{right:10%;top:24%}.venn .t3{left:50%;bottom:16%;transform:translateX(-50%)}
+.venn .t4{left:50%;top:47%;transform:translateX(-50%);font-weight:500;background:var(--ink);padding:5px 9px;border-radius:4px}
+@keyframes drift1{50%{transform:translate(-8px,6px)}}
+@keyframes drift2{50%{transform:translate(8px,8px)}}
+@keyframes drift3{50%{transform:translate(0,-10px)}}
+
+/* Clientes */
+.clients{background:var(--ink-2);border-bottom:1px solid var(--line)}
+.clients .wrap{display:flex;align-items:center;gap:36px;padding-block:28px;flex-wrap:wrap}
+.clients .eyebrow{color:var(--muted);flex:0 0 auto}
+.clients ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px 34px;align-items:center}
+.clients li{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.04em;text-transform:uppercase;color:#c8d4e6}
+
+/* Cifras */
+.facts .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding-block:0}
+.fact{padding:40px 28px 40px 0;border-right:1px solid var(--line)}
+.fact + .fact{padding-left:28px}
+.fact:last-child{border-right:0}
+.fact strong{display:block;font-family:var(--display);font-size:56px;line-height:1;color:var(--fg);font-variant-numeric:tabular-nums}
+.fact span{color:var(--muted);font-size:15.5px}
+
+section.block{padding-block:96px;border-top:1px solid var(--line)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.head h2{font-size:clamp(38px,5vw,60px);text-transform:uppercase;margin-top:10px}
+.head p{color:var(--muted);max-width:30em;margin:0}
+
+/* Servicios */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.svc{background:var(--ink);padding:30px 26px 28px;display:flex;flex-direction:column;gap:12px;text-decoration:none;transition:background .25s}
+.svc:hover{background:var(--ink-3)}
+.svc .n{font-family:var(--mono);font-size:12px;color:var(--sky);letter-spacing:.1em}
+.svc h3{font-size:28px;text-transform:uppercase}
+.svc p{color:var(--muted);font-size:15.5px;margin:0;flex:1}
+.svc .more{font-weight:600;font-size:14.5px;color:var(--sky)}
+
+/* Producciones */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--ink);border-color:var(--fg)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--ink-2);transition:border-color .25s,transform .25s}
+.card:hover{border-color:var(--deep);transform:translateY(-3px)}
+.poster{aspect-ratio:16/10;max-width:100%;position:relative;display:flex;align-items:flex-end;padding:18px 20px;overflow:hidden}
+.poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(4,8,16,.75))}
+.poster .ph{position:absolute;right:14px;top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:rgba(255,255,255,.65);text-transform:uppercase;z-index:1}
+.poster h3{position:relative;z-index:1;font-size:36px;text-transform:uppercase;color:#fff}
+.p1{background:radial-gradient(circle at 80% 20%,#35a3e8 0 18%,transparent 19%),linear-gradient(135deg,#0b3d91,#071a3d)}
+.p2{background:radial-gradient(circle at 20% 30%,#4bb3f0 0 22%,transparent 23%),radial-gradient(circle at 45% 45%,#1466c8 0 22%,transparent 23%),#08162f}
+.p3{background:repeating-linear-gradient(90deg,#0d2a5c 0 18px,#0a2149 18px 36px)}
+.p4{background:linear-gradient(160deg,#1466c8,#06102a 70%)}
+.p5{background:radial-gradient(circle at 70% 60%,#0b3d91 0 35%,transparent 36%),#050b18}
+.p6{background:conic-gradient(from 200deg at 30% 70%,#35a3e8,#0b3d91,#07122a,#35a3e8)}
+.meta{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.slate{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:12px;color:var(--sky);letter-spacing:.04em}
+.meta p{margin:0;color:var(--muted);font-size:15.5px;flex:1}
+.award{display:inline-flex;align-self:flex-start;gap:8px;align-items:center;font-size:13px;font-weight:600;color:#ffd98a;background:rgba(255,217,138,.08);border:1px solid rgba(255,217,138,.25);padding:4px 10px;border-radius:999px}
+.all{margin-top:36px;display:flex;justify-content:center}
+
+/* Reel */
+.reel{position:relative;overflow:hidden;background:var(--ink-2);border-top:1px solid var(--line)}
+.reel .wrap{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;padding-block:90px}
+.reel h2{font-size:clamp(40px,6vw,78px);text-transform:uppercase}
+.reel p{color:var(--muted);margin:16px 0 0;max-width:32em}
+.bigplay{width:150px;height:150px;border-radius:50%;background:var(--sky);display:grid;place-items:center;text-decoration:none;box-shadow:0 0 0 14px rgba(53,163,232,.12),0 0 0 30px rgba(53,163,232,.06);transition:transform .25s}
+.bigplay:hover{transform:scale(1.05)}
+.bigplay::before{content:"";border-left:38px solid #04121f;border-top:24px solid transparent;border-bottom:24px solid transparent;margin-left:10px}
+
+/* Contacto */
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:56px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:16px;color:var(--fg);background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:13px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sky)}
+textarea{min-height:130px;resize:vertical}
+.form-foot{grid-column:1/-1;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.status{color:var(--sky);font-size:15px}
+.offices{display:flex;flex-direction:column;gap:22px}
+.office{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:var(--ink-2)}
+.office h3{font-size:26px;text-transform:uppercase}
+.office p{margin:6px 0 0;color:var(--muted)}
+.mail{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mail code{font-family:var(--mono);font-size:15px;color:var(--fg);user-select:all}
+.copy{font:inherit;font-size:13px;font-weight:600;background:none;border:1px solid var(--line);color:var(--sky);border-radius:999px;padding:5px 12px;cursor:pointer}
+.social{display:flex;gap:10px;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:28px}
+
+/* Notas de rediseño */
+.note{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:#ffd98a;opacity:.85}
+
+@media (max-width:980px){
+  nav.main,.lang,header .btn{display:none}
+  .menu-btn{display:block}
+  header.site.open nav.main{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--ink);border-bottom:1px solid var(--line);padding:8px max(20px,env(safe-area-inset-right,0px)) 16px max(20px,env(safe-area-inset-left,0px))}
+  header.site.open nav.main a{padding:12px 0;border-bottom:1px solid var(--line);font-size:17px}
+  .hero .wrap{grid-template-columns:1fr;padding-block:56px 64px}
+  .venn{justify-self:center;width:320px;order:-1}
+  .services{grid-template-columns:1fr 1fr}
+  .grid{grid-template-columns:1fr 1fr}
+  .contact{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .logo img{height:44px}
+  .venn{width:240px}
+  .facts .wrap{grid-template-columns:1fr}
+  .fact,.fact + .fact{padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .fact:last-child{border-bottom:0}
+  .services,.grid{grid-template-columns:1fr}
+  form{grid-template-columns:1fr}
+  .reel .wrap{grid-template-columns:1fr;justify-items:start}
+  .bigplay{width:110px;height:110px}
+  section.block{padding-block:68px}
+  .clients li{font-size:19px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+
+<div class="proto">PROTOTIPO · Propuesta de rediseño para sinapsisproduccion.com</div>
+
+<header class="site" id="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Sinapsis Producción, inicio"><img src="data:image/png;base64,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" alt="Sinapsis Producción · Formatos y contenidos" width="300" height="100"></a>
+    <nav class="main" aria-label="Principal">
+      <a href="#servicios">Qué hacemos</a>
+      <a href="#producciones">Producciones</a>
+      <a href="#reel">Reel</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="lang"><b>ES</b><span>/</span><a href="https://sinapsisproduccion.com/en/home/" target="_blank" rel="noopener">EN</a></div>
+    <a class="btn btn-primary btn-sm" href="#contacto">Hablemos</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menú</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Productora audiovisual · Buenos Aires &amp; Miami</p>
+        <h1 style="margin-top:18px">Formatos que <em>viajan</em>.<br>Contenidos que quedan.</h1>
+        <p class="lead">Creamos, desarrollamos y producimos formatos originales para televisión y plataformas. Más de 30 años de experiencia en 11 países y pantallas panregionales.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#reel"><span class="play" aria-hidden="true"></span>Ver reel</a>
+          <a class="btn btn-ghost" href="#contacto">Tengo un proyecto</a>
+        </div>
+      </div>
+      <div class="venn" aria-hidden="true">
+        <span class="c1"></span><span class="c2"></span><span class="c3"></span>
+        <span class="tag t1">Creación</span><span class="tag t2">Producción</span><span class="tag t3">Showrunning</span>
+        <span class="tag t4">Sinapsis</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="clients" aria-label="Clientes">
+    <div class="wrap">
+      <p class="eyebrow">Producimos para</p>
+      <ul>
+        <li>Netflix</li><li>NBC Telemundo</li><li>El Nueve</li><li>Paka Paka</li><li>Encuentro</li><li>TV Pública</li><li>América TV</li><li>DeporTV</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="En cifras">
+    <div class="wrap">
+      <div class="fact"><strong>+30</strong><span>años de trayectoria del equipo</span></div>
+      <div class="fact"><strong>11</strong><span>países, de Argentina y México a España y EE.&nbsp;UU.</span></div>
+      <div class="fact"><strong>2</strong><span>oficinas: Buenos Aires y Miami</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="servicios">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Qué hacemos</p><h2>De la idea a la pantalla</h2></div>
+        <p>Acompañamos el proyecto completo o la etapa que necesites: desde la biblia del formato hasta la dirección general al aire.</p>
+      </div>
+      <div class="services">
+        <a class="svc" href="https://sinapsisproduccion.com/formatos-y-desarrollos-originales/" target="_blank" rel="noopener">
+          <span class="n">CREACIÓN</span><h3>Formatos originales</h3>
+          <p>Ideas propias desarrolladas hasta formato listo para vender o adaptar: concepto, biblia, piloto y estructura de temporada.</p>
+          <span class="more">Ver formatos →</span>
+        </a>
+        <a class="svc" href="https://sinapsisproduccion.com/nuestras_producciones/" target="_blank" rel="noopener">
+          <span class="n">PRODUCCIÓN</span><h3>Producción integral</h3>
+          <p>Preproducción, rodaje, puesta al aire y postproducción para TV abierta, cable, señales públicas y plataformas.</p>
+          <span class="more">Ver producciones →</span>
+        </a>
+        <a class="svc" href="https://sinapsisproduccion.com/showrunning-2/" target="_blank" rel="noopener">
+          <span class="n">DIRECCIÓN</span><h3>Showrunning</h3>
+          <p>Liderazgo creativo y ejecutivo del proyecto, de la sala de guion a la entrega final, en cualquier territorio.</p>
+          <span class="more">Cómo trabajamos →</span>
+        </a>
+        <a class="svc" href="https://sinapsisproduccion.com/consultorias/" target="_blank" rel="noopener">
+          <span class="n">ASESORÍA</span><h3>Consultoría</h3>
+          <p>Análisis de formatos, adaptación a nuevos mercados y estrategia de contenidos para canales y productoras.</p>
+          <span class="more">Consultar →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="producciones">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Nuestras producciones</p><h2>Lo que ya está al aire</h2></div>
+        <div class="filters" role="group" aria-label="Filtrar producciones">
+          <button class="chip" aria-pressed="true" data-f="all">Todas</button>
+          <button class="chip" aria-pressed="false" data-f="ent">Entretenimiento</button>
+          <button class="chip" aria-pressed="false" data-f="kids">Infantil</button>
+          <button class="chip" aria-pressed="false" data-f="doc">Documental</button>
+          <button class="chip" aria-pressed="false" data-f="fic">Ficción</button>
+        </div>
+      </div>
+      <p class="note">↳ Las ilustraciones son provisorias: acá van el póster o una foto de cada programa.</p>
+      <div class="grid" id="grid">
+        <article class="card" data-c="doc">
+          <div class="poster p1"><span class="ph">Póster</span><h3>#Marcha</h3></div>
+          <div class="meta">
+            <div class="slate"><span>Transmedia</span><span>Serie · Film · Web</span><span>TVP / Encuentro</span></div>
+            <p>El genocidio nazi desde la mirada adolescente. Grabado en Polonia, Israel, Argentina y el Vaticano, con la participación del Papa Francisco.</p>
+            <span class="award">★ Multipremiado</span>
+          </div>
+        </article>
+        <article class="card" data-c="fic">
+          <div class="poster p2"><span class="ph">Póster</span><h3>Rumuvi</h3></div>
+          <div class="meta">
+            <div class="slate"><span>Dramedy</span><span>13 × 13</span><span>UN3 TV / Flow</span></div>
+            <p>Serie web grabada en Corrientes. Libro, producción y dirección general.</p>
+            <span class="award">★ Mejor Dirección · Bawebfest y Rome Web Awards</span>
+          </div>
+        </article>
+        <article class="card" data-c="ent">
+          <div class="poster p3"><span class="ph">Póster</span><h3>Combate</h3></div>
+          <div class="meta">
+            <div class="slate"><span>Reality</span><span>Diario + semanal</span><span>El Nueve</span><span>2014–2016</span></div>
+            <p>Competencia física, artística y de conocimientos. Producción, puesta al aire y dirección general.</p>
+          </div>
+        </article>
+        <article class="card" data-c="kids">
+          <div class="poster p4"><span class="ph">Póster</span><h3>Experimentores</h3></div>
+          <div class="meta">
+            <div class="slate"><span>Ciencia</span><span>26 × 25</span><span>Paka Paka</span><span>2017 · 2021</span></div>
+            <p>Dos temporadas de ciencia para toda la familia, con Nazareno Casero y Tomás Fonzi. Grabado en Lima, Buenos Aires y Mendoza.</p>
+            <span class="award">★ Premio Fan Chile · Mejor Serie Infantil</span>
+          </div>
+        </article>
+        <article class="card" data-c="ent">
+          <div class="poster p5"><span class="ph">Póster</span><h3>La Hora Exacta</h3></div>
+          <div class="meta">
+            <div class="slate"><span>Archivo</span><span>Primetime</span><span>El Nueve</span></div>
+            <p>Entretenimiento con material de archivo, conducido por Teté Coustarot y Boy Olmi. Formato original de Sinapsis.</p>
+          </div>
+        </article>
+        <article class="card" data-c="doc">
+          <div class="poster p6"><span class="ph">Póster</span><h3>Instantáneas</h3></div>
+          <div class="meta">
+            <div class="slate"><span>Documental</span><span>13 × 30</span><span>DeporTV</span></div>
+            <p>Las fotos más icónicas del deporte, contadas por los reporteros gráficos que las tomaron. Idea original.</p>
+          </div>
+        </article>
+      </div>
+      <div class="all"><a class="btn btn-ghost" href="https://sinapsisproduccion.com/nuestras_producciones/" target="_blank" rel="noopener">Ver todas las producciones</a></div>
+    </div>
+  </section>
+
+  <section class="reel" id="reel">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Reel</p>
+        <h2 style="margin-top:12px">Treinta años<br>en pantalla.</h2>
+        <p>Un recorrido por los formatos y producciones del equipo. Ideal para compartir con tu canal o plataforma.</p>
+      </div>
+      <a class="bigplay" href="https://sinapsisproduccion.com/reel/" target="_blank" rel="noopener" aria-label="Ver el reel"></a>
+    </div>
+  </section>
+
+  <section class="block" id="contacto">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Contacto</p><h2>¿Tenés un proyecto?</h2></div>
+        <p>Contanos en qué estás trabajando y te respondemos a la brevedad.</p>
+      </div>
+      <div class="contact">
+        <form id="form" novalidate>
+          <div class="field"><label for="f-name">Nombre</label><input id="f-name" name="name" autocomplete="name" value="Lucía Fernández"></div>
+          <div class="field"><label for="f-org">Empresa / canal</label><input id="f-org" name="org" value="Productora ejemplo"></div>
+          <div class="field"><label for="f-mail">Email</label><input id="f-mail" name="email" type="email" autocomplete="email" value="lucia@ejemplo.com"></div>
+          <div class="field"><label for="f-type">Me interesa</label>
+            <select id="f-type" name="type"><option>Formatos originales</option><option selected>Producción integral</option><option>Showrunning</option><option>Consultoría</option><option>Prensa</option></select>
+          </div>
+          <div class="field full"><label for="f-msg">Mensaje</label><textarea id="f-msg" name="msg">Buscamos productora para una serie documental de 8 episodios para plataforma regional.</textarea></div>
+          <div class="form-foot"><button class="btn btn-primary" type="submit">Enviar mensaje</button><span class="status" id="status" role="status"></span></div>
+        </form>
+        <div class="offices">
+          <div class="office">
+            <h3>Buenos Aires</h3>
+            <p>Av. Corrientes 4035 (timbre 3)<br>C.A.B.A., Argentina</p>
+          </div>
+          <div class="office">
+            <h3>Miami</h3>
+            <p>Florida, Estados Unidos</p>
+          </div>
+          <div class="office">
+            <h3>Escribinos</h3>
+            <div class="mail" style="margin-top:8px"><code id="mail">info@sinapsisproduccion.com</code><button class="copy" id="copy" type="button">Copiar</button></div>
+            <div class="social" style="margin-top:16px">
+              <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/sinapsisprodu/" target="_blank" rel="noopener">Instagram</a>
+              <a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn btn-ghost btn-sm" href="https://sinapsisproduccion.com/prensa/" target="_blank" rel="noopener">Prensa</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Sinapsis Producción. Todos los derechos reservados.</span>
+    <span>Buenos Aires · Miami</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var header = document.querySelector('header.site'), btn = document.getElementById('menuBtn');
+  btn.addEventListener('click', function(){
+    var open = header.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? 'Cerrar' : 'Menú';
+  });
+  document.querySelectorAll('nav.main a').forEach(function(a){
+    a.addEventListener('click', function(){ header.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.textContent='Menú'; });
+  });
+
+  var chips = document.querySelectorAll('.chip'), cards = document.querySelectorAll('#grid .card');
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(x){ x.setAttribute('aria-pressed', x === c); });
+      var f = c.dataset.f;
+      cards.forEach(function(card){ card.hidden = !(f === 'all' || card.dataset.c === f); });
+    });
+  });
+
+  document.getElementById('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('status').textContent = 'Prototipo: en el sitio real este mensaje llegaría a info@sinapsisproduccion.com.';
+  });
+
+  var copy = document.getElementById('copy'), mail = document.getElementById('mail');
+  copy.addEventListener('click', function(){
+    var done = function(){ copy.textContent = 'Copiado'; setTimeout(function(){ copy.textContent = 'Copiar'; }, 1800); };
+    var fallback = function(){ var r = document.createRange(); r.selectNodeContents(mail); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    try { navigator.clipboard.writeText(mail.textContent).then(done, fallback); } catch(e){ fallback(); }
+  });
+})();
+</script>
