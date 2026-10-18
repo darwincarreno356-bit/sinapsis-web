@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Variante B — navegación simplificada
+   Se carga después de ../css/estilos.css y solo agrega o cambia lo necesario:
+   menú de 4 ítems, home de 3 bloques con reel de portada, una sola tarjeta
+   de proyecto y páginas Proyectos / Nosotros / Prensa.
+   ========================================================================== */
+
+/* ---------- Encabezado: se esconde al bajar, aparece al subir ---------- */
+.encabezado { transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow var(--transicion), background var(--transicion); }
+.encabezado.oculto { transform: translateY(-100%); }
+
+/* Sobre el reel de portada el encabezado es transparente */
+.pagina-inicio .encabezado { position: fixed; inset: 0 0 auto 0; background: transparent; }
+.pagina-inicio .encabezado.con-fondo { background: var(--fondo); }
+
+/* ---------- Etiqueta de comparación ---------- */
+.etiqueta-variante {
+  position: fixed; left: 16px; bottom: 16px; z-index: 60;
+  display: flex; gap: 2px;
+  font-family: var(--fuente-subtitulo); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--blanco); color: #061f3f; border-radius: 999px; padding: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+.etiqueta-variante a, .etiqueta-variante span { padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+.etiqueta-variante span { background: #061f3f; color: var(--blanco); }
+.etiqueta-variante a:hover { color: var(--azul); }
+
+/* ==========================================================================
+   Home — bloque 1: reel de portada
+   ========================================================================== */
+.reel-portada {
+  position: relative;
+  height: min(88vh, 960px);
+  min-height: 520px;
+  overflow: hidden;
+  display: flex; align-items: flex-end;
+  background: var(--fondo-2);
+}
+.reel-portada__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* El video de YouTube se agranda para cubrir todo el bloque, como un fondo.
+   JS calcula el tamaño (ver ajustarReel en variante.js). */
+.reel-portada__video {
+  position: absolute; left: 50%; top: 50%;
+  width: 100%; height: 100%;
+  transform: translate(-50%, -50%);
+  border: 0; pointer-events: none;
+  opacity: 0; transition: opacity 1.2s ease;
+}
+.reel-portada__video.listo { opacity: 1; }
+.reel-portada::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(6, 31, 63, 0.92) 0%, rgba(6, 31, 63, 0.25) 45%, rgba(6, 31, 63, 0.45) 100%);
+}
+.reel-portada__contenido {
+  position: relative; z-index: 1;
+  width: 100%;
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px;
+  padding: 0 var(--margen) clamp(36px, 6vh, 72px);
+}
+.reel-portada__titulo {
+  font-size: clamp(36px, 5.4vw, 80px);
+  font-weight: 300; line-height: 1.04; letter-spacing: -0.02em;
+  max-width: 14em; text-wrap: balance;
+}
+.boton--claro { border-color: var(--blanco); }
+.boton--claro:hover { background: var(--blanco); color: #061f3f; }
+
+/* ==========================================================================
+   Home — bloque 2: destacados
+   ========================================================================== */
+.ver-todos {
+  font-family: var(--fuente-subtitulo); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--texto); white-space: nowrap;
+}
+.ver-todos::after { content: " →"; color: var(--azul-claro); }
+.ver-todos:hover { color: var(--azul-claro); }
+
+/* ==========================================================================
+   Home — bloque 3: clientes (sin título de sección grande)
+   ========================================================================== */
+.pagina-inicio .clientes { margin-top: clamp(64px, 8vw, 112px); }
+
+/* Pie sin logo repetido */
+.pie--b { grid-template-columns: repeat(3, 1fr); }
+
+/* ==========================================================================
+   Páginas internas
+   ========================================================================== */
+.cabecera-pagina { padding: clamp(40px, 6vw, 88px) var(--margen) 0; max-width: var(--ancho-max); margin: 0 auto; }
+.cabecera-pagina h1 { font-size: clamp(36px, 4.6vw, 68px); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; }
+.cabecera-pagina p { margin-top: 16px; }
+.cabecera-pagina .seccion__cabecera { margin: 0; align-items: flex-end; }
+
+.pagina-interna .seccion:first-of-type { padding-top: clamp(32px, 4vw, 56px); }
+
+/* Consultorías como lista de texto */
+.lista-consultorias { border-top: 1px solid var(--linea); }
+.lista-consultorias li {
+  display: grid; grid-template-columns: 1.2fr 2fr auto; gap: 8px 32px; align-items: baseline;
+  padding: 18px 0; border-bottom: 1px solid var(--linea);
+}
+.lista-consultorias strong { font-weight: 500; }
+.lista-consultorias span { color: var(--texto-2); }
+.lista-consultorias .anio { font-size: 13px; font-variant-numeric: tabular-nums; }
+
+/* Nosotros: qué hacemos en 4 líneas */
+.areas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; border-top: 1px solid var(--linea); padding-top: 28px; }
+.area h3 { font-size: 18px; font-weight: 500; margin-bottom: 8px; }
+.area p { font-size: 15px; color: var(--texto-2); }
+.area a { color: var(--azul-claro); font-size: 14px; display: inline-block; margin-top: 10px; }
+
+/* Nosotros: equipo */
+.equipo { display: grid; gap: clamp(48px, 6vw, 80px); }
+.persona { display: grid; grid-template-columns: minmax(180px, 280px) 1fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+.persona img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radio); background: var(--fondo-2); }
+.persona h3 { font-size: 24px; font-weight: 500; }
+.persona .etiqueta { display: block; margin: 6px 0 18px; }
+.persona__bio { display: grid; gap: 14px; color: var(--texto-2); max-width: 44em; }
+
+/* Prensa */
+.lista-prensa { border-top: 1px solid var(--linea); }
+.lista-prensa a {
+  display: grid; grid-template-columns: 180px 1fr auto; gap: 8px 32px; align-items: baseline;
+  padding: 20px 0; border-bottom: 1px solid var(--linea);
+  transition: color var(--transicion);
+}
+.lista-prensa a:hover { color: var(--azul-claro); }
+.lista-prensa .medio { font-family: var(--fuente-subtitulo); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--texto-2); }
+.lista-prensa .tema { font-size: 18px; }
+.lista-prensa .anio { color: var(--texto-2); font-size: 13px; font-variant-numeric: tabular-nums; }
+.lista-prensa .anio::after { content: "  ↗"; color: var(--azul-claro); }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .areas { grid-template-columns: repeat(2, 1fr); }
+  .pie--b { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 860px) {
+  .reel-portada { height: 78vh; min-height: 460px; }
+  .persona { grid-template-columns: 1fr; }
+  .persona img { max-width: 280px; }
+}
+@media (max-width: 600px) {
+  .areas, .pie--b { grid-template-columns: 1fr; }
+  .lista-consultorias li, .lista-prensa a { grid-template-columns: 1fr; gap: 4px; }
+  .etiqueta-variante { left: 50%; transform: translateX(-50%); bottom: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reel-portada__video { display: none; }
+}

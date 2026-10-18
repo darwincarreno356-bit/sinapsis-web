@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sinapsis Producción · Desarrollo y dirección de formatos y contenidos</title>
+  <meta name="description" content="Productora audiovisual especializada en crear, desarrollar, formatear y producir contenidos. Oficinas en Buenos Aires y Miami.">
+  <link rel="icon" href="../assets/img/logo-sinapsis.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Open+Sans:wght@700&display=swap">
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="estilos-b.css">
+</head>
+<body class="pagina-inicio">
+
+<!-- ============ ENCABEZADO: logo + 4 ítems, sin desplegable ============ -->
+<header class="encabezado" id="encabezado">
+  <a class="encabezado__logo" href="index.html" aria-label="Sinapsis Producción, inicio">
+    <img src="../assets/img/logo-sinapsis.png" alt="Sinapsis Producción · Formatos y contenidos" width="300" height="100">
+  </a>
+  <button class="encabezado__menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">
+    <span class="visually-hidden">Abrir menú</span>
+    <span class="hamburguesa" aria-hidden="true"></span>
+  </button>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <ul class="menu__lista">
+      <li class="menu__item"><a class="menu__link" href="proyectos.html">Proyectos</a></li>
+      <li class="menu__item"><a class="menu__link" href="nosotros.html">Nosotros</a></li>
+      <li class="menu__item"><a class="menu__link" href="prensa.html">Prensa</a></li>
+      <li class="menu__item"><a class="menu__link" href="#contacto">Contacto</a></li>
+      <li class="menu__item menu__idioma"><span aria-current="true">ES</span> / <a href="../en/index.html" lang="en">EN</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- 1. Reel de portada: se reproduce solo y sin sonido -->
+  <section class="reel-portada" id="reel-portada" data-video-id="Egrbd3uA5PU" aria-labelledby="portada-titulo">
+    <img class="reel-portada__poster" src="../assets/img/set-estudio.jpg" alt="">
+    <div class="reel-portada__contenido">
+      <h1 class="reel-portada__titulo" id="portada-titulo">Desarrollo y dirección de formatos y contenidos<span class="punto">.</span></h1>
+      <button class="boton boton--claro" data-abrir-video="Egrbd3uA5PU" data-video-titulo="Reel Sinapsis Producción">
+        <span class="icono-play" aria-hidden="true"></span> Ver reel completo
+      </button>
+    </div>
+  </section>
+
+  <!-- 2. Seis proyectos destacados (columna "destacado" de la planilla) -->
+  <section class="seccion" aria-labelledby="destacados-titulo">
+    <div class="seccion__cabecera">
+      <h2 class="titulo-seccion" id="destacados-titulo">Proyectos</h2>
+      <a class="ver-todos" href="proyectos.html">Ver todos los proyectos</a>
+    </div>
+    <ul class="grilla" id="destacados"></ul>
+  </section>
+
+  <!-- 3. Clientes -->
+  <section class="clientes" aria-labelledby="clientes-titulo">
+    <h2 class="etiqueta" id="clientes-titulo">Producimos y desarrollamos para</h2>
+    <ul class="clientes__lista">
+      <li><img src="../assets/img/clientes/netflix.svg" alt="Netflix" loading="lazy"></li>
+      <li><img src="../assets/img/clientes/nbc-telemundo.svg" alt="NBC Telemundo" loading="lazy"></li>
+      <li><img src="../assets/img/clientes/el-nueve.png" alt="Canal 9 de Argentina (El Nueve)" loading="lazy"></li>
+      <li><img src="../assets/img/clientes/pakapaka.svg" alt="Paka Paka" loading="lazy"></li>
+      <li><img src="../assets/img/clientes/encuentro.svg" alt="Encuentro" loading="lazy"></li>
+      <li><img src="../assets/img/clientes/tv-publica.svg" alt="TV Pública" loading="lazy"></li>
+      <li><img src="../assets/img/clientes/america-tv.png" alt="América TV" loading="lazy"></li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- ============ CONTACTO / PIE (sin logo repetido) ============ -->
+<footer class="pie pie--b" id="contacto">
+  <div class="pie__bloque">
+    <h2 class="etiqueta">Buenos Aires</h2>
+    <address>
+      Av. Corrientes 4035 (timbre 3)<br>
+      Buenos Aires, Argentina<br>
+      <a href="mailto:info@sinapsisproduccion.com">info@sinapsisproduccion.com</a>
+    </address>
+  </div>
+  <div class="pie__bloque">
+    <h2 class="etiqueta">Miami</h2>
+    <address>Miami, Florida<br>Estados Unidos</address>
+  </div>
+  <div class="pie__bloque">
+    <h2 class="etiqueta">Redes</h2>
+    <ul class="redes">
+      <li><a href="https://www.instagram.com/sinapsisprodu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg></a></li>
+      <li><a href="https://twitter.com/sinapsisprodu" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.19L2 3h6.33l4.37 5.77L17.75 3Zm-1.08 16.17h1.7L7.4 4.74H5.58l11.09 14.43Z"/></svg></a></li>
+    </ul>
+  </div>
+  <p class="pie__legal">© <span id="anio">2026</span> Sinapsis Producción. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Etiqueta para comparar versiones (se quita al publicar) -->
+<nav class="etiqueta-variante" aria-label="Comparar versiones">
+  <a href="../index.html">Versión A</a><span>Versión B</span>
+</nav>
+
+<dialog class="reproductor" id="reproductor" aria-labelledby="reproductor-titulo">
+  <div class="reproductor__caja">
+    <button class="reproductor__cerrar" id="reproductor-cerrar" aria-label="Cerrar">×</button>
+    <div class="reproductor__video" id="reproductor-video"></div>
+    <div class="reproductor__ficha" id="reproductor-ficha"><h2 id="reproductor-titulo"></h2></div>
+  </div>
+</dialog>
+
+<script src="../js/proyectos.js"></script>
+<script src="variante.js"></script>
+</body>
+</html>
