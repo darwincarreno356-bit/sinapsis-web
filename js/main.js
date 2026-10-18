@@ -154,6 +154,25 @@
     return t;
   });
 
+  /* ---------- Carrusel de destacados (portada) ---------- */
+  var carrusel = document.getElementById("carrusel");
+  if (carrusel) {
+    proyectos.filter(function (p) { return p.destacado; }).forEach(function (p, i) {
+      var t = tarjeta(p);
+      // Las primeras se ven apenas abre la página: cargarlas sin esperar
+      var img = t.querySelector("img");
+      if (img && i < 3) img.loading = "eager";
+      carrusel.appendChild(t);
+    });
+    var mover = function (dir) {
+      var item = carrusel.querySelector(".proyecto");
+      var paso = item ? item.getBoundingClientRect().width + 20 : carrusel.clientWidth * 0.8;
+      carrusel.scrollBy({ left: dir * paso, behavior: reducirMovimiento ? "auto" : "smooth" });
+    };
+    document.getElementById("carrusel-ant").addEventListener("click", function () { mover(-1); });
+    document.getElementById("carrusel-sig").addEventListener("click", function () { mover(1); });
+  }
+
   var filtroActual = "todos";
   var mostrarTodos = false;
 

@@ -20,7 +20,7 @@
 <!-- ============ ENCABEZADO ============ -->
 <header class="encabezado" id="encabezado">
   <a class="encabezado__logo" href="index.html" aria-label="Sinapsis Producción, inicio">
-    <img src="assets/img/logo-sinapsis.png" alt="Sinapsis Producción · Formatos y contenidos" width="300" height="100">
+    <img src="assets/img/logo-sinapsis-claro.png" alt="Sinapsis Producción · Formatos y contenidos" width="300" height="100">
   </a>
 
   <button class="encabezado__menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">
@@ -52,17 +52,19 @@
 <main>
 
   <!-- ============ PORTADA ============ -->
-  <section class="portada">
-    <!-- Para usar un video de portada: guardar el archivo en assets/video/portada.mp4
-         y reemplazar la <img> por:
-         <video class="portada__media" src="assets/video/portada.mp4" poster="assets/img/set-estudio.jpg" autoplay muted loop playsinline></video> -->
-    <img class="portada__media" src="assets/img/set-estudio.jpg" alt="">
-    <div class="portada__contenido">
-      <h1 class="portada__titulo">Desarrollo y dirección de formatos y contenidos<span class="punto">.</span></h1>
+  <section class="portada" aria-labelledby="portada-titulo">
+    <div class="portada__intro">
+      <h1 class="portada__titulo" id="portada-titulo">Desarrollo y dirección de formatos y contenidos<span class="punto">.</span></h1>
       <p class="portada__bajada">Creación / Producción / Showrunning / Consultoría</p>
-      <button class="boton boton--play" data-video-plataforma="youtube" data-video-id="Egrbd3uA5PU" data-video-titulo="Reel Sinapsis Producción">
-        <span class="icono-play" aria-hidden="true"></span> Ver reel
-      </button>
+    </div>
+
+    <!-- Proyectos destacados (columna "destacado" de la planilla). Se cargan desde js/proyectos.js -->
+    <div class="carrusel">
+      <ul class="carrusel__pista" id="carrusel" aria-label="Proyectos destacados"></ul>
+      <div class="carrusel__controles">
+        <button class="carrusel__flecha" id="carrusel-ant" aria-label="Anterior">←</button>
+        <button class="carrusel__flecha" id="carrusel-sig" aria-label="Siguiente">→</button>
+      </div>
     </div>
   </section>
 
@@ -138,14 +140,14 @@
   </section>
 
   <!-- ============ REEL ============ -->
-  <section class="reel" id="reel">
-    <img class="reel__fondo" src="assets/img/sala-control.jpg" alt="" loading="lazy">
-    <div class="reel__contenido">
-      <h2 class="reel__titulo">Reel<span class="punto">.</span></h2>
-      <button class="boton-play-grande" data-video-plataforma="youtube" data-video-id="Egrbd3uA5PU" data-video-titulo="Reel Sinapsis Producción" aria-label="Ver el reel">
-        <span class="icono-play" aria-hidden="true"></span>
-      </button>
+  <section class="seccion reel" id="reel" aria-labelledby="reel-titulo">
+    <div class="seccion__cabecera">
+      <h2 class="titulo-seccion" id="reel-titulo">Reel<span class="punto">.</span></h2>
     </div>
+    <button class="reel__video" data-video-plataforma="youtube" data-video-id="Egrbd3uA5PU" data-video-titulo="Reel Sinapsis Producción" aria-label="Ver el reel">
+      <img src="assets/img/set-estudio.jpg" alt="" loading="lazy">
+      <span class="boton-play-grande" aria-hidden="true"><span class="icono-play"></span></span>
+    </button>
   </section>
 
 </main>
@@ -153,7 +155,7 @@
 <!-- ============ CONTACTO / PIE ============ -->
 <footer class="pie" id="contacto">
   <div class="pie__marca">
-    <img src="assets/img/logo-sinapsis.png" alt="Sinapsis Producción" width="300" height="100" loading="lazy">
+    <img src="assets/img/logo-sinapsis-claro.png" alt="Sinapsis Producción" width="300" height="100" loading="lazy">
   </div>
 
   <div class="pie__bloque">
