@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sinapsis Producción · Desarrollo y dirección de formatos y contenidos</title>
+  <meta name="description" content="Productora audiovisual especializada en crear, desarrollar, formatear y producir contenidos. Más de 30 años de experiencia. Oficinas en Buenos Aires y Miami.">
+  <meta property="og:title" content="Sinapsis Producción">
+  <meta property="og:description" content="Desarrollo y dirección de formatos y contenidos. Creación, producción, showrunning y consultoría.">
+  <meta property="og:image" content="assets/img/set-estudio.jpg">
+  <meta property="og:locale" content="es_AR">
+  <link rel="icon" href="assets/img/logo-sinapsis.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- ============ ENCABEZADO ============ -->
+<header class="encabezado" id="encabezado">
+  <a class="encabezado__logo" href="index.html" aria-label="Sinapsis Producción, inicio">
+    <img src="assets/img/logo-sinapsis.png" alt="Sinapsis Producción · Formatos y contenidos" width="300" height="100">
+  </a>
+
+  <button class="encabezado__menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">
+    <span class="visually-hidden">Abrir menú</span>
+    <span class="hamburguesa" aria-hidden="true"></span>
+  </button>
+
+  <nav class="menu" id="menu" aria-label="Principal">
+    <ul class="menu__lista">
+      <li class="menu__item menu__item--desplegable">
+        <button class="menu__link menu__toggle" aria-expanded="false" aria-controls="sub-que-hacemos">Qué hacemos</button>
+        <ul class="submenu" id="sub-que-hacemos">
+          <li><a href="#proyectos" data-filtro="Formato original">Formatos y desarrollos originales</a></li>
+          <li><a href="#proyectos" data-filtro="Producción">Nuestras producciones</a></li>
+          <li><a href="#proyectos" data-filtro="Showrunning">Showrunning</a></li>
+          <li><a href="#proyectos" data-filtro="Consultoría">Consultoría</a></li>
+        </ul>
+      </li>
+      <li class="menu__item"><a class="menu__link" href="#proyectos">Proyectos</a></li>
+      <li class="menu__item"><a class="menu__link" href="equipo.html">Equipo</a></li>
+      <li class="menu__item"><a class="menu__link" href="prensa.html">Prensa</a></li>
+      <li class="menu__item"><a class="menu__link" href="#reel">Reel</a></li>
+      <li class="menu__item"><a class="menu__link" href="#contacto">Contacto</a></li>
+      <li class="menu__item menu__idioma"><span aria-current="true">ES</span> / <a href="en/index.html" lang="en">EN</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ PORTADA ============ -->
+  <section class="portada">
+    <!-- Para usar un video de portada: guardar el archivo en assets/video/portada.mp4
+         y reemplazar la <img> por:
+         <video class="portada__media" src="assets/video/portada.mp4" poster="assets/img/set-estudio.jpg" autoplay muted loop playsinline></video> -->
+    <img class="portada__media" src="assets/img/set-estudio.jpg" alt="">
+    <div class="portada__contenido">
+      <h1 class="portada__titulo">Desarrollo y dirección de formatos y contenidos<span class="punto">.</span></h1>
+      <p class="portada__bajada">Creación / Producción / Showrunning / Consultoría</p>
+      <button class="boton boton--play" data-video-plataforma="youtube" data-video-id="Egrbd3uA5PU" data-video-titulo="Reel Sinapsis Producción">
+        <span class="icono-play" aria-hidden="true"></span> Ver reel
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ CLIENTES ============ -->
+  <section class="clientes" aria-labelledby="clientes-titulo">
+    <h2 class="etiqueta" id="clientes-titulo">Producimos y desarrollamos para</h2>
+    <ul class="clientes__lista">
+      <li>Netflix</li>
+      <li>NBC Telemundo</li>
+      <li>Canal 9 de Argentina</li>
+      <li>Paka Paka</li>
+      <li>Encuentro</li>
+      <li>TV Pública</li>
+      <li>América TV</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIÉNES SOMOS ============ -->
+  <section class="seccion quienes" id="quienes-somos">
+    <h2 class="etiqueta">¿Quiénes somos?</h2>
+    <div class="quienes__texto">
+      <p class="texto-grande"><strong>Sinapsis Producción</strong> es una productora audiovisual especializada en crear, desarrollar, formatear y producir contenidos.</p>
+      <p>Está liderada por reconocidos profesionales con más de 30 años de experiencia en Argentina, Estados Unidos, México, Chile, Perú, Colombia, Ecuador, Uruguay, Bolivia, España y pantallas panregionales.</p>
+      <p>Tiene oficinas en Buenos Aires, Argentina y Miami, Florida, US.</p>
+    </div>
+  </section>
+
+  <!-- ============ QUÉ HACEMOS ============ -->
+  <section class="seccion" id="que-hacemos" aria-labelledby="que-hacemos-titulo">
+    <div class="seccion__cabecera">
+      <h2 class="titulo-seccion" id="que-hacemos-titulo">¿Qué hacemos?</h2>
+    </div>
+    <div class="servicios">
+      <a class="servicio" href="#proyectos" data-filtro="Formato original">
+        <div class="servicio__imagen"><img src="assets/img/proyectos/yt-vMKHsfBA9eY.jpg" alt="" loading="lazy"></div>
+        <h3 class="servicio__titulo">Formatos y desarrollos originales</h3>
+        <p class="servicio__texto">La Hora Exacta, El Domo del Dinero, Dilema, Combate Argentina, #Marcha y más.</p>
+      </a>
+      <a class="servicio" href="#proyectos" data-filtro="Producción">
+        <div class="servicio__imagen"><img src="assets/img/proyectos/marcha-foto.jpg" alt="" loading="lazy"></div>
+        <h3 class="servicio__titulo">Nuestras producciones</h3>
+        <p class="servicio__texto">Experimentores, Rumuvi, Alunizados, Instantáneas y más.</p>
+      </a>
+      <a class="servicio" href="#proyectos" data-filtro="Showrunning">
+        <div class="servicio__imagen"><img src="assets/img/mexico-tiene-talento-set.jpg" alt="" loading="lazy"></div>
+        <h3 class="servicio__titulo">Showrunning</h3>
+        <p class="servicio__texto">Cien Latinos Dijeron, X Factor (US), México Tiene Talento y más.</p>
+      </a>
+      <a class="servicio" href="#proyectos" data-filtro="Consultoría">
+        <div class="servicio__imagen"><img src="assets/img/sala-control.jpg" alt="" loading="lazy"></div>
+        <h3 class="servicio__titulo">Consultoría</h3>
+        <p class="servicio__texto">Consultoría artística y de producción. Contenidos con perspectiva de género y diversidad.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ PROYECTOS ============ -->
+  <section class="seccion" id="proyectos" aria-labelledby="proyectos-titulo">
+    <div class="seccion__cabecera">
+      <h2 class="titulo-seccion" id="proyectos-titulo">Proyectos</h2>
+      <div class="filtros" role="group" aria-label="Filtrar proyectos">
+        <button class="filtro" aria-pressed="true" data-filtro="todos">Todos</button>
+        <button class="filtro" aria-pressed="false" data-filtro="Formato original">Formatos originales</button>
+        <button class="filtro" aria-pressed="false" data-filtro="Producción">Producciones</button>
+        <button class="filtro" aria-pressed="false" data-filtro="Showrunning">Showrunning</button>
+        <button class="filtro" aria-pressed="false" data-filtro="Consultoría">Consultoría</button>
+      </div>
+    </div>
+    <ul class="grilla" id="grilla"></ul>
+    <div class="grilla__mas">
+      <button class="boton boton--linea" id="ver-mas" hidden>Ver más proyectos</button>
+    </div>
+  </section>
+
+  <!-- ============ REEL ============ -->
+  <section class="reel" id="reel">
+    <img class="reel__fondo" src="assets/img/sala-control.jpg" alt="" loading="lazy">
+    <div class="reel__contenido">
+      <h2 class="reel__titulo">Reel<span class="punto">.</span></h2>
+      <button class="boton-play-grande" data-video-plataforma="youtube" data-video-id="Egrbd3uA5PU" data-video-titulo="Reel Sinapsis Producción" aria-label="Ver el reel">
+        <span class="icono-play" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ CONTACTO / PIE ============ -->
+<footer class="pie" id="contacto">
+  <div class="pie__marca">
+    <img src="assets/img/logo-sinapsis.png" alt="Sinapsis Producción" width="300" height="100" loading="lazy">
+  </div>
+
+  <div class="pie__bloque">
+    <h2 class="etiqueta">Buenos Aires</h2>
+    <address>
+      Av. Corrientes 4035 (timbre 3)<br>
+      Buenos Aires, Argentina<br>
+      <a href="mailto:info@sinapsisproduccion.com">info@sinapsisproduccion.com</a>
+    </address>
+  </div>
+
+  <div class="pie__bloque">
+    <h2 class="etiqueta">Miami</h2>
+    <address>
+      Miami, Florida<br>
+      Estados Unidos
+    </address>
+  </div>
+
+  <div class="pie__bloque">
+    <h2 class="etiqueta">Redes</h2>
+    <ul class="pie__lista">
+      <li><a href="https://www.instagram.com/sinapsisprodu/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://twitter.com/sinapsisprodu" target="_blank" rel="noopener">X / Twitter</a></li>
+    </ul>
+  </div>
+
+  <p class="pie__legal">© <span id="anio">2026</span> Sinapsis Producción. Todos los derechos reservados.</p>
+</footer>
+
+<!-- ============ REPRODUCTOR (ventana de video) ============ -->
+<dialog class="reproductor" id="reproductor" aria-labelledby="reproductor-titulo">
+  <div class="reproductor__caja">
+    <button class="reproductor__cerrar" id="reproductor-cerrar" aria-label="Cerrar">×</button>
+    <div class="reproductor__video" id="reproductor-video"></div>
+    <div class="reproductor__ficha" id="reproductor-ficha">
+      <h2 id="reproductor-titulo"></h2>
+    </div>
+  </div>
+</dialog>
+
+<script src="js/proyectos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
