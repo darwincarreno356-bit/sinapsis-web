@@ -92,6 +92,19 @@
    ========================================================================== */
 .pagina-inicio .clientes { margin-top: clamp(64px, 8vw, 112px); }
 
+/* Logos de clientes solos, en blanco, sin placa */
+.clientes__lista--solo-logos { gap: 18px clamp(28px, 3.4vw, 52px); align-items: center; }
+.clientes__lista--solo-logos li { width: auto; height: auto; background: none; padding: 0; border-radius: 0; }
+.clientes__lista--solo-logos img {
+  /* Cada logo trae su altura (--alto-logo) para que todos pesen parecido a la vista */
+  width: auto; height: var(--alto-logo, 32px); max-width: 130px; object-fit: contain;
+  filter: brightness(0) invert(1);   /* cualquier color → blanco */
+  opacity: 0.9;
+  transition: opacity var(--transicion);
+}
+.clientes__lista--solo-logos img.ya-en-blanco { filter: none; }  /* versiones preparadas por scripts/logos-blanco.py */
+.clientes__lista--solo-logos li:hover img { opacity: 1; }
+
 /* Pie sin logo repetido */
 .pie--b { grid-template-columns: repeat(3, 1fr); }
 
@@ -156,6 +169,9 @@
   .persona img { max-width: 280px; }
 }
 @media (max-width: 600px) {
+  .clientes__lista--solo-logos { gap: 22px 32px; }
+  .clientes__lista--solo-logos li { width: auto; }
+  .clientes__lista--solo-logos img { height: calc(var(--alto-logo, 32px) * 0.8); max-width: 104px; }
   .areas, .pie--b { grid-template-columns: 1fr; }
   .lista-consultorias li, .lista-prensa a { grid-template-columns: 1fr; gap: 4px; }
   .etiqueta-variante { left: 50%; transform: translateX(-50%); bottom: 12px; }

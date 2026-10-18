@@ -143,3 +143,10 @@ Más el formulario, las redes y el mapa. Lo mismo se resume en el pie de todas l
 - En Consultoría, los logos de Univision/GV y TV Azteca/Latina tienen textos repetidos o cruzados.
 - Hay títulos con formato roto (asteriscos sueltos) y el typo «DESARROLLLOS».
 - El copyright está fijo en 2021.
+
+## Variante B (en `b/`) — decisiones al 18/10/2026
+
+- **Tipografía elegida: opción 2** → títulos, menú y etiquetas en **Barlow Condensed**; texto en **Barlow**. Queda como predeterminada en la variante B (el selector «Letra» sigue disponible para comparar).
+- **Home:** reel de portada + bajada «Creación / Producción / Showrunning / Consultoría», una frase de presentación con link a Nosotros, 6 proyectos destacados y logos de clientes.
+- **Logos de clientes solos, en blanco, sin placa.** TV Pública, Paka Paka y América tienen versiones preparadas con `scripts/logos-blanco.py`; el resto se pasa a blanco con CSS. Cada logo tiene su propia altura para que pesen parecido.
+

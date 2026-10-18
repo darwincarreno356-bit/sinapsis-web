@@ -202,7 +202,7 @@
       var v = b.dataset.letra;
       if (v === "actual") delete document.documentElement.dataset.fuente;
       else document.documentElement.dataset.fuente = v;
-      try { localStorage.setItem("sinapsis-letra", v); } catch (e) {}
+      try { localStorage.setItem("sinapsis-letra-v2", v); } catch (e) {}
       marcarLetra();
     });
   });

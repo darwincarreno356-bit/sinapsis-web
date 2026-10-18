@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@200;400&family=Inter+Tight:wght@300;400;500&family=Barlow+Condensed:wght@300;500&family=Barlow:wght@300;400;500&family=Big+Shoulders+Display:wght@300;600&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="tipografias.css">
   <script>
-    // Aplica la letra elegida antes de dibujar la página (por defecto, la opción 1)
-    (function () { var f = "1"; try { f = localStorage.getItem("sinapsis-letra") || "1"; } catch (e) {}
+    // Aplica la letra elegida antes de dibujar la página (por defecto, la opción 2)
+    (function () { var f = "2"; try { f = localStorage.getItem("sinapsis-letra-v2") || "2"; } catch (e) {}
       if (f !== "actual") document.documentElement.dataset.fuente = f; })();
   </script>
 </head>
@@ -79,14 +79,14 @@
   <!-- 3. Clientes -->
   <section class="clientes" aria-labelledby="clientes-titulo">
     <h2 class="etiqueta" id="clientes-titulo">Producimos y desarrollamos para</h2>
-    <ul class="clientes__lista">
-      <li><img src="../assets/img/clientes/netflix.svg" alt="Netflix" loading="lazy"></li>
-      <li><img src="../assets/img/clientes/nbc-telemundo.svg" alt="NBC Telemundo" loading="lazy"></li>
-      <li><img src="../assets/img/clientes/el-nueve.png" alt="Canal 9 de Argentina (El Nueve)" loading="lazy"></li>
-      <li><img src="../assets/img/clientes/pakapaka.svg" alt="Paka Paka" loading="lazy"></li>
-      <li><img src="../assets/img/clientes/encuentro.svg" alt="Encuentro" loading="lazy"></li>
-      <li><img src="../assets/img/clientes/tv-publica.svg" alt="TV Pública" loading="lazy"></li>
-      <li><img src="../assets/img/clientes/america-tv.png" alt="América TV" loading="lazy"></li>
+    <ul class="clientes__lista clientes__lista--solo-logos">
+      <li><img src="../assets/img/clientes/netflix.svg" style="--alto-logo: 26px" alt="Netflix" loading="lazy"></li>
+      <li><img src="../assets/img/clientes/nbc-telemundo.svg" style="--alto-logo: 44px" alt="NBC Telemundo" loading="lazy"></li>
+      <li><img src="../assets/img/clientes/el-nueve.png" style="--alto-logo: 24px" alt="Canal 9 de Argentina (El Nueve)" loading="lazy"></li>
+      <li><img class="ya-en-blanco" src="../assets/img/clientes/pakapaka-blanco.svg" style="--alto-logo: 34px" alt="Paka Paka" loading="lazy"></li>
+      <li><img src="../assets/img/clientes/encuentro.svg" style="--alto-logo: 40px" alt="Encuentro" loading="lazy"></li>
+      <li><img class="ya-en-blanco" src="../assets/img/clientes/tv-publica-blanco.svg" style="--alto-logo: 30px" alt="TV Pública" loading="lazy"></li>
+      <li><img src="../assets/img/clientes/america-tv-transparente.png" style="--alto-logo: 44px" alt="América TV" loading="lazy"></li>
     </ul>
   </section>
 
