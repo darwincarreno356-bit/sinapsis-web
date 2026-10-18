@@ -12,7 +12,7 @@
   <link rel="icon" href="assets/img/logo-sinapsis.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Open+Sans:wght@700&display=swap">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -72,13 +72,13 @@
   <section class="clientes" aria-labelledby="clientes-titulo">
     <h2 class="etiqueta" id="clientes-titulo">Producimos y desarrollamos para</h2>
     <ul class="clientes__lista">
-      <li>Netflix</li>
-      <li>NBC Telemundo</li>
-      <li>Canal 9 de Argentina</li>
-      <li>Paka Paka</li>
-      <li>Encuentro</li>
-      <li>TV Pública</li>
-      <li>América TV</li>
+      <li><img src="assets/img/clientes/netflix.svg" alt="Netflix" loading="lazy"></li>
+      <li><img src="assets/img/clientes/nbc-telemundo.svg" alt="NBC Telemundo" loading="lazy"></li>
+      <li><img src="assets/img/clientes/el-nueve.png" alt="Canal 9 de Argentina (El Nueve)" loading="lazy"></li>
+      <li><img src="assets/img/clientes/pakapaka.svg" alt="Paka Paka" loading="lazy"></li>
+      <li><img src="assets/img/clientes/encuentro.svg" alt="Encuentro" loading="lazy"></li>
+      <li><img src="assets/img/clientes/tv-publica.svg" alt="TV Pública" loading="lazy"></li>
+      <li><img src="assets/img/clientes/america-tv.png" alt="América TV" loading="lazy"></li>
     </ul>
   </section>
 
@@ -177,24 +177,23 @@
 
   <div class="pie__bloque">
     <h2 class="etiqueta">Redes</h2>
-    <ul class="pie__lista">
-      <li><a href="https://www.instagram.com/sinapsisprodu/" target="_blank" rel="noopener">Instagram</a></li>
-      <li><a href="https://twitter.com/sinapsisprodu" target="_blank" rel="noopener">X / Twitter</a></li>
+    <ul class="redes">
+      <li>
+        <a href="https://www.instagram.com/sinapsisprodu/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/sinapsisprodu" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.19L2 3h6.33l4.37 5.77L17.75 3Zm-1.08 16.17h1.7L7.4 4.74H5.58l11.09 14.43Z"/></svg>
+        </a>
+      </li>
     </ul>
   </div>
 
   <p class="pie__legal">© <span id="anio">2026</span> Sinapsis Producción. Todos los derechos reservados.</p>
 </footer>
 
-<!-- ============ PIE FIJO MÍNIMO (estilo Kenya Films) ============ -->
-<div class="pie-fijo" role="contentinfo" aria-label="Datos de contacto">
-  <span class="pie-fijo__ciudad">Buenos Aires · Miami</span>
-  <a class="pie-fijo__mail" href="mailto:info@sinapsisproduccion.com">info@sinapsisproduccion.com</a>
-  <span class="pie-fijo__redes">
-    <a href="https://www.instagram.com/sinapsisprodu/" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://twitter.com/sinapsisprodu" target="_blank" rel="noopener">X</a>
-  </span>
-</div>
 
 <!-- ============ REPRODUCTOR (ventana de video) ============ -->
 <dialog class="reproductor" id="reproductor" aria-labelledby="reproductor-titulo">

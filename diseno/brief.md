@@ -9,7 +9,9 @@ Versión 2 · 18/10/2026 · Basado en las referencias que eligió Darwin.
 - **Acento:** azul claro del logo `#30A8E0` (punto final, corchetes del menú, botones de play).
 - **Azules del logo:** `#30A8E0` (claro) · `#0868C0` (medio) · `#0048A8` (profundo).
 - **Estilo Canada:** plano y minimalista, la imagen manda, menú y créditos en mayúsculas chicas, ítem activo entre [corchetes].
-- **De Kenya Films se toma solo el pie fijo mínimo:** ciudad, email y redes siempre visibles abajo. En celular pasa al final de la página.
+- **Tipografía:** Heebo para todo el sitio. **Subtítulos en Open Sans negrita** («Creación / Producción…», «Producimos y desarrollamos para», «¿Quiénes somos?» y etiquetas del pie).
+- **Clientes con logos** (Netflix, NBC Telemundo, El Nueve, Paka Paka, Encuentro, TV Pública, América TV) en color sobre placas blancas. Archivos en `assets/img/clientes/`, tomados de Wikimedia Commons.
+- **Redes con íconos** (Instagram y X) en el pie. Se descartó la barra fija inferior de Kenya Films.
 - Existe también un logo para fondo claro (`assets/img/logo-sinapsis-claro.png`) por si se vuelve a un fondo blanco.
 
 ## Lo que se mantiene de Sinapsis
@@ -49,7 +51,7 @@ Versión 2 · 18/10/2026 · Basado en las referencias que eligió Darwin.
 ### Kenya Films — kenyafilms.com
 
 **Tomar**
-- El **pie fijo mínimo**: una barra abajo con ciudad, email y redes.
+- Se probó el pie fijo mínimo y se descartó.
 
 **No tomar**
 - El fondo negro (se reemplaza por azul profundo), el slider de portada a pantalla completa, los pósters verticales y el menú reducido a 4 opciones.
