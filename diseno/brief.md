@@ -15,7 +15,7 @@ Versión 1 · 18/10/2026 · Basado en las referencias que eligió Darwin.
 
 **Tomar**
 - **Lo limpio.** La imagen manda. Hay muy poco texto alrededor: título del proyecto y una línea de crédito («CLIENTE — TÍTULO / DIRECTOR»).
-- **Miniaturas que se reproducen solas.** Son videos cortos, sin sonido, en loop.
+- **Cómo se presentan y reproducen los videos y las miniaturas.** Las miniaturas son videos cortos, sin sonido, en loop, que se reproducen solos. Al entrar al proyecto se ve el video completo en grande.
 - **Material clasificado por tipo.** Canada separa Film & TV, Music Videos, Photo y Press. En Sinapsis esto se traduce en filtrar los proyectos por tipo de trabajo y por género (ver abajo).
 - **Navegación intuitiva.** Pocas opciones en el menú, siempre a la vista, y filtros simples arriba de las grillas (ALL / BCN / LDN / LA).
 - **Contacto ordenado.** Cada oficina tiene su bloque con dirección, teléfono y email. Se encuentra todo de un vistazo, y lo mismo se repite en el pie de cada página.
@@ -117,7 +117,6 @@ Más el formulario, las redes y el mapa. Lo mismo se resume en el pie de todas l
 4. **Redes:** ¿siguen activos Twitter/X e Instagram? ¿Hay LinkedIn, YouTube o Vimeo de la productora?
 5. **Equipo:** ¿siguen los mismos tres integrantes? ¿Hay fotos nuevas?
 6. **Prensa:** ¿se suman notas más recientes?
-7. **Aclarar:** la idea de mostrar «cómo se producen los videos» y «tutorías» (ver nota en el chat).
 
 ## Errores del sitio actual a no repetir
 
