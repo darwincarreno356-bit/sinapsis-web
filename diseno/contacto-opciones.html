@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es" data-fuente="d">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opciones de contacto · Sinapsis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap">
+<link rel="stylesheet" href="../css/estilos.css">
+<link rel="stylesheet" href="../b/estilos-b.css">
+<link rel="stylesheet" href="../b/tipografias.css">
+<style>
+/* Hoja para comparar 3 formas de presentar el contacto al final de cada página.
+   Usa los estilos reales de la versión B (fondo, letra D, colores). */
+.hoja-intro { max-width: 1100px; margin: 0 auto; padding: 48px var(--margen) 8px; }
+.hoja-intro h1 { font-size: clamp(28px, 3.4vw, 44px); font-weight: 200; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 12px; }
+.hoja-intro p { color: var(--texto-2); max-width: 54em; }
+
+.opcion { margin-top: 56px; }
+.opcion__rotulo {
+  max-width: var(--ancho-max); margin: 0 auto 0; padding: 0 var(--margen) 14px;
+  display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline; justify-content: space-between;
+}
+.opcion__rotulo h2 { margin: 0; font: 400 13px var(--fuente); letter-spacing: .2em; text-transform: uppercase; color: #ffd166; }
+.opcion__rotulo p { margin: 0; color: var(--texto-2); font-size: 14px; max-width: 46em; }
+.marco-opcion { border-top: 2px dashed rgba(255, 209, 102, .5); border-bottom: 2px dashed rgba(255, 209, 102, .5); }
+
+/* ---------- Elementos comunes ---------- */
+.cta-titulo { font-family: "Jost", sans-serif; font-weight: 200; text-transform: uppercase; letter-spacing: .04em; line-height: 1.05; margin: 0; font-size: clamp(34px, 5vw, 72px); }
+.cta-titulo .punto { color: var(--azul-claro); }
+.cta-bajada { color: var(--texto-2); font-size: 17px; max-width: 34em; margin: 16px 0 0; }
+.mail-grande {
+  display: inline-block; margin-top: 28px;
+  font-family: "Jost", sans-serif; font-weight: 300; font-size: clamp(20px, 2.4vw, 32px);
+  border-bottom: 1px solid var(--azul-claro); padding-bottom: 4px; transition: color var(--transicion);
+}
+.mail-grande:hover { color: var(--azul-claro); }
+.boton--lleno { background: var(--blanco); color: #061f3f; border-color: var(--blanco); }
+.boton--lleno:hover { background: var(--azul-claro); border-color: var(--azul-claro); color: #061f3f; }
+.oficinas-linea { display: flex; flex-wrap: wrap; gap: 10px 40px; color: var(--texto-2); font-size: 14px; }
+.oficinas-linea b { color: var(--texto); font-weight: 400; letter-spacing: .2em; text-transform: uppercase; font-size: 11px; display: block; margin-bottom: 4px; }
+.pie-linea {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+  padding: 20px var(--margen); border-top: 1px solid var(--linea);
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2);
+}
+
+/* ---------- Opción 1: llamada grande ---------- */
+.op1 { padding: clamp(72px, 10vw, 140px) var(--margen) clamp(56px, 7vw, 96px); max-width: var(--ancho-max); margin: 0 auto; }
+.op1__acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 32px; }
+.op1 .oficinas-linea { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--linea); }
+
+/* ---------- Opción 2: mini formulario ---------- */
+.op2 { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 5vw, 80px); padding: clamp(72px, 9vw, 120px) var(--margen); max-width: var(--ancho-max); margin: 0 auto; }
+.op2 .oficinas-linea { margin-top: 40px; flex-direction: column; gap: 22px; }
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 24px; align-content: start; }
+.campo { display: grid; gap: 8px; min-width: 0; }
+.campo--ancho { grid-column: 1 / -1; }
+.campo label, .campo legend { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--texto-2); padding: 0; }
+.campo input, .campo textarea {
+  font: 300 17px "Jost", sans-serif; color: var(--texto);
+  background: transparent; border: 0; border-bottom: 1px solid var(--linea);
+  padding: 8px 0 10px; width: 100%; border-radius: 0;
+}
+.campo textarea { resize: vertical; min-height: 84px; }
+.campo input:focus, .campo textarea:focus { outline: none; border-bottom-color: var(--azul-claro); }
+fieldset.campo { border: 0; margin: 0; padding: 0; }
+.temas { display: flex; flex-wrap: wrap; gap: 8px; }
+.temas label { cursor: pointer; position: relative; }
+.campo .temas input { position: absolute; left: 0; top: 0; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.temas span {
+  display: inline-block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  border: 1px solid var(--linea); border-radius: 999px; padding: 8px 14px; color: var(--texto-2);
+  transition: border-color var(--transicion), color var(--transicion), background var(--transicion);
+}
+.temas input:checked + span { background: var(--blanco); color: #061f3f; border-color: var(--blanco); }
+.temas input:focus-visible + span { outline: 2px solid var(--azul-claro); outline-offset: 2px; }
+.form__pie { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+.form__estado { font-size: 14px; color: var(--azul-claro); }
+
+/* ---------- Opción 3: contacto por área ---------- */
+.op3 { padding: clamp(72px, 9vw, 120px) var(--margen); max-width: var(--ancho-max); margin: 0 auto; }
+.areas-contacto { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 48px; background: var(--linea); border: 1px solid var(--linea); border-radius: var(--radio); overflow: hidden; }
+.area-contacto { background: var(--fondo); padding: 28px 24px 26px; display: grid; gap: 10px; align-content: start; transition: background var(--transicion); }
+.area-contacto:hover { background: var(--fondo-2); }
+.area-contacto h3 { margin: 0; font: 300 20px "Jost", sans-serif; text-transform: uppercase; letter-spacing: .06em; }
+.area-contacto p { margin: 0; color: var(--texto-2); font-size: 14px; }
+.area-contacto a { font-size: 14px; color: var(--azul-claro); margin-top: 6px; }
+.op3 .oficinas-linea { margin-top: 48px; }
+
+@media (max-width: 860px) {
+  .op2 { grid-template-columns: 1fr; }
+  .areas-contacto { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .form { grid-template-columns: 1fr; }
+  .areas-contacto { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="hoja-intro">
+  <h1>Opciones de contacto</h1>
+  <p>Tres formas de darle más peso al contacto al final de cada página. Están armadas con los estilos reales de la versión B. El formulario de la opción 2 se puede completar para probarlo, pero todavía no envía nada.</p>
+</div>
+
+<!-- ===================== OPCIÓN 1 ===================== -->
+<section class="opcion" aria-labelledby="o1">
+  <div class="opcion__rotulo">
+    <h2 id="o1">Opción 1 · Llamada grande</h2>
+    <p>Una frase grande, el email destacado y un botón. Sin formulario: lo más simple y lo más parecido a Canada y Kenya.</p>
+  </div>
+  <div class="marco-opcion">
+    <div class="op1">
+      <h2 class="cta-titulo">¿Tenés un proyecto?<br>Hablemos<span class="punto">.</span></h2>
+      <p class="cta-bajada">Desarrollamos, producimos y acompañamos formatos para canales y plataformas de toda la región.</p>
+      <div class="op1__acciones">
+        <a class="mail-grande" href="mailto:info@sinapsisproduccion.com">info@sinapsisproduccion.com</a>
+        <a class="boton boton--lleno" href="mailto:info@sinapsisproduccion.com">Escribinos</a>
+      </div>
+      <div class="oficinas-linea">
+        <div><b>Buenos Aires</b>Av. Corrientes 4035 (timbre 3)</div>
+        <div><b>Miami</b>Florida, Estados Unidos</div>
+        <div><b>Redes</b>Instagram · X</div>
+      </div>
+    </div>
+    <div class="pie-linea"><span>© 2026 Sinapsis Producción</span><span>Buenos Aires · Miami</span></div>
+  </div>
+</section>
+
+<!-- ===================== OPCIÓN 2 ===================== -->
+<section class="opcion" aria-labelledby="o2">
+  <div class="opcion__rotulo">
+    <h2 id="o2">Opción 2 · Mini formulario</h2>
+    <p>Frase y oficinas a la izquierda; a la derecha, un formulario corto con el tema de la consulta. Recibe pedidos ordenados sin que la persona tenga que abrir su correo.</p>
+  </div>
+  <div class="marco-opcion">
+    <div class="op2">
+      <div>
+        <h2 class="cta-titulo" style="font-size:clamp(30px,4vw,56px)">Contanos tu idea<span class="punto">.</span></h2>
+        <p class="cta-bajada">Te respondemos desde Buenos Aires o Miami.</p>
+        <div class="oficinas-linea">
+          <div><b>Email</b>info@sinapsisproduccion.com</div>
+          <div><b>Buenos Aires</b>Av. Corrientes 4035 (timbre 3)</div>
+          <div><b>Miami</b>Florida, Estados Unidos</div>
+        </div>
+      </div>
+      <form class="form" id="form-prueba" novalidate>
+        <fieldset class="campo campo--ancho">
+          <legend>Me interesa</legend>
+          <div class="temas">
+            <label><input type="radio" name="tema" value="formato" checked><span>Un formato</span></label>
+            <label><input type="radio" name="tema" value="produccion"><span>Producción</span></label>
+            <label><input type="radio" name="tema" value="showrunning"><span>Showrunning</span></label>
+            <label><input type="radio" name="tema" value="consultoria"><span>Consultoría</span></label>
+            <label><input type="radio" name="tema" value="prensa"><span>Prensa</span></label>
+          </div>
+        </fieldset>
+        <div class="campo"><label for="c-nombre">Nombre</label><input id="c-nombre" name="nombre" autocomplete="name"></div>
+        <div class="campo"><label for="c-empresa">Empresa o canal</label><input id="c-empresa" name="empresa" autocomplete="organization"></div>
+        <div class="campo campo--ancho"><label for="c-mail">Email</label><input id="c-mail" name="email" type="email" autocomplete="email"></div>
+        <div class="campo campo--ancho"><label for="c-msj">Mensaje</label><textarea id="c-msj" name="mensaje" rows="3"></textarea></div>
+        <div class="form__pie">
+          <button class="boton boton--lleno" type="submit">Enviar</button>
+          <span class="form__estado" id="form-estado" role="status"></span>
+        </div>
+      </form>
+    </div>
+    <div class="pie-linea"><span>© 2026 Sinapsis Producción</span><span>Instagram · X</span></div>
+  </div>
+</section>
+
+<!-- ===================== OPCIÓN 3 ===================== -->
+<section class="opcion" aria-labelledby="o3">
+  <div class="opcion__rotulo">
+    <h2 id="o3">Opción 3 · Contacto por área</h2>
+    <p>Cuatro puertas de entrada, una por servicio. Cada una puede llevar a un email distinto o al formulario con el tema ya elegido.</p>
+  </div>
+  <div class="marco-opcion">
+    <div class="op3">
+      <h2 class="cta-titulo" style="font-size:clamp(30px,4vw,56px)">Trabajemos juntos<span class="punto">.</span></h2>
+      <div class="areas-contacto">
+        <div class="area-contacto"><h3>Formatos</h3><p>Querés adaptar o desarrollar un formato original.</p><a href="mailto:info@sinapsisproduccion.com">Escribinos →</a></div>
+        <div class="area-contacto"><h3>Producción</h3><p>Necesitás una productora para tu programa o serie.</p><a href="mailto:info@sinapsisproduccion.com">Escribinos →</a></div>
+        <div class="area-contacto"><h3>Showrunning</h3><p>Buscás liderazgo creativo y ejecutivo para un proyecto.</p><a href="mailto:info@sinapsisproduccion.com">Escribinos →</a></div>
+        <div class="area-contacto"><h3>Consultoría</h3><p>Querés revisar tu programación, contenidos o procesos.</p><a href="mailto:info@sinapsisproduccion.com">Escribinos →</a></div>
+      </div>
+      <div class="oficinas-linea">
+        <div><b>Buenos Aires</b>Av. Corrientes 4035 (timbre 3)</div>
+        <div><b>Miami</b>Florida, Estados Unidos</div>
+        <div><b>Prensa</b>info@sinapsisproduccion.com</div>
+      </div>
+    </div>
+    <div class="pie-linea"><span>© 2026 Sinapsis Producción</span><span>Instagram · X</span></div>
+  </div>
+</section>
+
+<div style="height:80px"></div>
+
+<script>
+  // Solo para la prueba: el formulario no envía nada todavía
+  document.getElementById("form-prueba").addEventListener("submit", function (e) {
+    e.preventDefault();
+    document.getElementById("form-estado").textContent = "Prueba: en el sitio real este mensaje llegaría a info@sinapsisproduccion.com.";
+  });
+</script>
+</body>
+</html>
