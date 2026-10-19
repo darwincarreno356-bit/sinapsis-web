@@ -201,7 +201,7 @@
     b.addEventListener("click", function () {
       var v = b.dataset.letra;
       document.documentElement.dataset.fuente = v;
-      try { localStorage.setItem("sinapsis-letra-v3", v); } catch (e) {}
+      try { localStorage.setItem("sinapsis-letra-v4", v); } catch (e) {}
       marcarLetra();
     });
   });

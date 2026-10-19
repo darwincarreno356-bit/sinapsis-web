@@ -105,6 +105,12 @@
 .clientes__lista--solo-logos img.ya-en-blanco { filter: none; }  /* versiones preparadas por scripts/logos-blanco.py */
 .clientes__lista--solo-logos li:hover img { opacity: 1; }
 
+/* Partners: misma fila que clientes, pegada debajo y sin doble línea */
+.pagina-inicio .clientes--partners { margin-top: 0; border-top: 0; }
+/* Las etiquetas "Producimos para" y "Partners" ocupan el mismo ancho, para que los logos arranquen alineados */
+.pagina-inicio .clientes .etiqueta { flex: 0 0 260px; }
+@media (max-width: 600px) { .pagina-inicio .clientes .etiqueta { flex-basis: 100%; } }
+
 /* Pie sin logo repetido */
 .pie--b { grid-template-columns: repeat(3, 1fr); }
 

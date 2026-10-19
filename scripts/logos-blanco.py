@@ -111,5 +111,32 @@ def texto_blanco_a_oscuro(origen, destino):
     print("→", destino)
 
 
+def partner(origen, destino):
+    """Logos de partners del sitio original: vienen grises sobre un recuadro blanco
+    de 300×180. Se vuelve transparente el blanco y se recorta el margen sobrante."""
+    ancho, alto, filas = leer_png(os.path.join(RAIZ, "contenido", "imagenes", origen))
+    for f in filas:
+        for x in range(ancho):
+            r, g, b, a = f[x * 4:x * 4 + 4]
+            claridad = min(r, g, b)
+            # El logo es gris claro: todo lo que no sea casi blanco queda opaco
+            # (si no, al pasarlo a blanco se vería apagado)
+            f[x * 4 + 3] = min(a, max(0, min(255, (235 - claridad) * 255 // 60)))
+    xs = [x for f in filas for x in range(ancho) if f[x * 4 + 3] > 30]
+    ys = [y for y, f in enumerate(filas) if any(f[x * 4 + 3] > 30 for x in range(ancho))]
+    m = 4
+    x0, x1 = max(0, min(xs) - m), min(ancho, max(xs) + m + 1)
+    y0, y1 = max(0, min(ys) - m), min(alto, max(ys) + m + 1)
+    recorte = [f[x0 * 4:x1 * 4] for f in filas[y0:y1]]
+    os.makedirs(os.path.join(RAIZ, "assets", "img", "partners"), exist_ok=True)
+    escribir_png(os.path.join(RAIZ, "assets", "img", "partners", destino), x1 - x0, y1 - y0, recorte)
+    print("→ partners/" + destino, x1 - x0, "×", y1 - y0)
+
+
 svg_en_blanco("pakapaka.svg", "pakapaka-blanco.svg")
 texto_blanco_a_oscuro("el-nueve-2026.png", "el-nueve-2026-oscuro.png")
+for origen, destino in [("pow.png", "360-powwow.png"), ("gold.png", "glowstar-media.png"),
+                        ("media.png", "mediapro.png"), ("happy.png", "happy-ending.png"),
+                        ("rayo.png", "rayo-en-la-botella.png"), ("elojo.png", "el-ojo-en-la-pared.png"),
+                        ("oz.png", "oz-media.png")]:
+    partner(origen, destino)
