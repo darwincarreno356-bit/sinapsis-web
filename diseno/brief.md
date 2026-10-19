@@ -150,6 +150,7 @@ Más el formulario, las redes y el mapa. Lo mismo se resume en el pie de todas l
 
 - ~~Tipografía opción 2 (Barlow Condensed + Barlow)~~: descartada por genérica.
 - **Tipografía elegida (ronda 2): D → Jost fina en todo el sitio**, títulos de portada y de página en mayúsculas, menú y etiquetas en mayúsculas chicas con mucho espaciado. Queda como predeterminada (el selector «Letra» sigue para comparar).
+- **Contacto al final de todas las páginas: opción 1 (llamada grande).** «¿Tenés un proyecto? Hablemos.», el email destacado, un botón «Escribinos» y debajo oficinas y redes. La bajada es provisoria. Opciones descartadas en `diseno/contacto-opciones.html`.
 - **Partners en la home**, debajo de los clientes y con el mismo estilo (logos en blanco): 360 Powwow, Glowstar Media, Mediapro, Happy Ending TV, Rayo en la Botella, El Ojo en la Pared y OZ Media. Se recuperaron del sitio original y se prepararon con `scripts/logos-blanco.py` (archivos en `assets/img/partners/`).
 - **Home:** reel de portada + bajada «Creación / Producción / Showrunning / Consultoría», una frase de presentación con link a Nosotros, 6 proyectos destacados y logos de clientes.
 - **Logos de clientes solos, en blanco, sin placa.** TV Pública, Paka Paka y América tienen versiones preparadas con `scripts/logos-blanco.py`; el resto se pasa a blanco con CSS. Cada logo tiene su propia altura para que pesen parecido.

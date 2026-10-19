@@ -11,6 +11,7 @@
 html[data-fuente] body { font-family: var(--f-cuerpo); font-weight: var(--p-cuerpo, 300); }
 
 html[data-fuente] .reel-portada__titulo,
+html[data-fuente] .cta-titulo,
 html[data-fuente] .titulo-seccion,
 html[data-fuente] .cabecera-pagina h1,
 html[data-fuente] .texto-grande,
@@ -110,6 +111,7 @@ html[data-fuente="d"] {
   --escala-titulos: 1; --escala-texto-grande: 1; --interlinea-titulos: 1.1;
 }
 html[data-fuente="d"] .reel-portada__titulo,
+html[data-fuente="d"] .cta-titulo,
 html[data-fuente="d"] .cabecera-pagina h1 { text-transform: uppercase; letter-spacing: 0.04em; }
 
 /* ---------- Selector de letra (junto a Versión A / B) ---------- */
