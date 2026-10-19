@@ -1,9 +1,10 @@
 /* ==========================================================================
-   Pruebas de tipografía (variante B)
-   Tres combinaciones de letras alargadas, finas y elegantes, en la línea de
-   Banijay (Sharp Grotesk) y Canada (GT Zirkon), todas de Google Fonts.
+   Pruebas de tipografía (variante B) — ronda 2
+   Barlow resultó demasiado genérica. Cuatro combinaciones más finas, alargadas
+   y elegantes, con el minimalismo de productoras como Canada. Todas son de
+   Google Fonts (gratis, también para uso comercial).
    Se eligen con el selector "Letra" de abajo a la izquierda.
-   "Actual" = Heebo + Open Sans negrita (lo que hay hoy).
+   "Actual" = Barlow Condensed + Barlow (la opción 2 de la ronda anterior).
    ========================================================================== */
 
 /* Dónde se aplica cada rol */
@@ -18,9 +19,11 @@ html[data-fuente] .area h3,
 html[data-fuente] .reproductor__ficha h2 {
   font-family: var(--f-titulos);
   font-weight: var(--p-titulos, 300);
+  font-stretch: var(--a-titulos, 100%);
   letter-spacing: var(--e-titulos, -0.01em);
+  text-transform: var(--m-titulos, none);
 }
-html[data-fuente] .texto-grande strong { font-weight: var(--p-titulos-fuerte, 500); }
+html[data-fuente] .texto-grande strong { font-weight: var(--p-titulos-fuerte, 500); font-style: var(--i-titulos-fuerte, normal); }
 
 html[data-fuente] .menu__link,
 html[data-fuente] .menu__idioma,
@@ -34,28 +37,19 @@ html[data-fuente] .lista-prensa .medio,
 html[data-fuente] .etiqueta-variante {
   font-family: var(--f-etiquetas);
   font-weight: var(--p-etiquetas, 500);
+  font-stretch: var(--a-etiquetas, 100%);
   letter-spacing: var(--e-etiquetas, 0.12em);
   font-size: var(--t-etiquetas, 12px);
 }
 
-/* Las letras condensadas se ven más chicas: los títulos crecen un poco */
-html[data-fuente] .reel-portada__titulo { font-size: calc(clamp(36px, 5.4vw, 80px) * var(--escala-titulos, 1)); }
+/* Tamaño de títulos según cada letra */
+html[data-fuente] .reel-portada__titulo { font-size: calc(clamp(36px, 5.4vw, 80px) * var(--escala-titulos, 1)); line-height: var(--interlinea-titulos, 1.04); }
 html[data-fuente] .titulo-seccion { font-size: calc(clamp(26px, 2.6vw, 38px) * var(--escala-titulos, 1)); }
-html[data-fuente] .cabecera-pagina h1 { font-size: calc(clamp(36px, 4.6vw, 68px) * var(--escala-titulos, 1)); }
+html[data-fuente] .cabecera-pagina h1 { font-size: calc(clamp(36px, 4.6vw, 68px) * var(--escala-titulos, 1)); line-height: var(--interlinea-titulos, 1.05); }
 html[data-fuente] .texto-grande { font-size: calc(clamp(22px, 2.2vw, 30px) * var(--escala-texto-grande, 1)); }
 
-/* 1 · Antonio + Inter Tight — la más alargada: títulos altos y finos */
-html[data-fuente="1"] {
-  --f-titulos: "Antonio", "Arial Narrow", sans-serif;
-  --f-etiquetas: "Antonio", "Arial Narrow", sans-serif;
-  --f-cuerpo: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
-  --p-titulos: 200; --p-titulos-fuerte: 400; --e-titulos: 0;
-  --p-etiquetas: 400; --e-etiquetas: 0.14em; --t-etiquetas: 13px;
-  --escala-titulos: 1.3; --escala-texto-grande: 1.2;
-}
-
-/* 2 · Barlow Condensed + Barlow — condensada y limpia, la más sobria */
-html[data-fuente="2"] {
+/* Actual · Barlow Condensed + Barlow */
+html[data-fuente="actual"] {
   --f-titulos: "Barlow Condensed", "Arial Narrow", sans-serif;
   --f-etiquetas: "Barlow Condensed", "Arial Narrow", sans-serif;
   --f-cuerpo: "Barlow", "Helvetica Neue", Arial, sans-serif;
@@ -64,15 +58,59 @@ html[data-fuente="2"] {
   --escala-titulos: 1.2; --escala-texto-grande: 1.12;
 }
 
-/* 3 · Big Shoulders Display + Hanken Grotesk — alargada con carácter de cartel */
-html[data-fuente="3"] {
-  --f-titulos: "Big Shoulders Display", "Arial Narrow", sans-serif;
-  --f-etiquetas: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --f-cuerpo: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --p-titulos: 300; --p-titulos-fuerte: 600; --e-titulos: 0.01em;
-  --p-etiquetas: 500; --e-etiquetas: 0.12em; --t-etiquetas: 11px;
-  --escala-titulos: 1.25; --escala-texto-grande: 1.15;
+/* A · Instrument Serif + Instrument Sans condensada
+   Serif alargada y elegante para títulos, sans fina y angosta para menú y texto.
+   La más "editorial": muy usada por productoras y estudios de diseño. */
+html[data-fuente="a"] {
+  --f-titulos: "Instrument Serif", "Times New Roman", serif;
+  --f-etiquetas: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-cuerpo: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --p-titulos: 400; --p-titulos-fuerte: 400; --i-titulos-fuerte: italic; --e-titulos: -0.01em;
+  --p-cuerpo: 400;
+  --p-etiquetas: 500; --a-etiquetas: 75%; --e-etiquetas: 0.12em; --t-etiquetas: 12px;
+  --escala-titulos: 1.22; --escala-texto-grande: 1.18; --interlinea-titulos: 1;
 }
+
+/* B · Smooch Sans + Instrument Sans condensada
+   Sans muy alargada y muy fina para títulos; el texto, limpio y angosto.
+   La más cercana a "alargada y fina" sin perder modernidad. */
+html[data-fuente="b"] {
+  --f-titulos: "Smooch Sans", "Arial Narrow", sans-serif;
+  --f-etiquetas: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-cuerpo: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --p-titulos: 200; --p-titulos-fuerte: 500; --e-titulos: 0.005em;
+  --p-cuerpo: 400;
+  --p-etiquetas: 500; --a-etiquetas: 75%; --e-etiquetas: 0.12em; --t-etiquetas: 12px;
+  --escala-titulos: 1.5; --escala-texto-grande: 1.4; --interlinea-titulos: 0.95;
+}
+
+/* C · Italiana + Jost
+   Mayúsculas finas de alto contraste, estilo revista de moda; texto geométrico liviano.
+   La más elegante y "de lujo". */
+html[data-fuente="c"] {
+  --f-titulos: "Italiana", "Didot", "Times New Roman", serif;
+  --f-etiquetas: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --f-cuerpo: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --p-titulos: 400; --p-titulos-fuerte: 400; --e-titulos: 0.02em;
+  --p-cuerpo: 300;
+  --p-etiquetas: 400; --e-etiquetas: 0.22em; --t-etiquetas: 11px;
+  --escala-titulos: 1.15; --escala-texto-grande: 1.08; --interlinea-titulos: 1.08;
+}
+
+/* D · Jost fina en todo, en mayúsculas para menú y títulos
+   Geométrica, fina y muy minimalista: la más cercana al estilo Canada
+   (texto chico, mayúsculas, mucho aire). */
+html[data-fuente="d"] {
+  --f-titulos: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --f-etiquetas: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --f-cuerpo: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --p-titulos: 200; --p-titulos-fuerte: 400; --e-titulos: 0.02em;
+  --p-cuerpo: 300;
+  --p-etiquetas: 400; --e-etiquetas: 0.2em; --t-etiquetas: 11px;
+  --escala-titulos: 1; --escala-texto-grande: 1; --interlinea-titulos: 1.1;
+}
+html[data-fuente="d"] .reel-portada__titulo,
+html[data-fuente="d"] .cabecera-pagina h1 { text-transform: uppercase; letter-spacing: 0.04em; }
 
 /* ---------- Selector de letra (junto a Versión A / B) ---------- */
 .selector-letra { display: flex; align-items: center; gap: 2px; margin-left: 6px; padding-left: 8px; border-left: 1px solid rgba(6, 31, 63, 0.2); }

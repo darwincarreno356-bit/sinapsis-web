@@ -11,13 +11,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Open+Sans:wght@700&display=swap">
   <link rel="stylesheet" href="../css/estilos.css">
   <link rel="stylesheet" href="estilos-b.css">
-  <!-- Pruebas de tipografía: Antonio, Inter Tight, Barlow, Barlow Condensed, Big Shoulders Display, Hanken Grotesk -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@200;400&family=Inter+Tight:wght@300;400;500&family=Barlow+Condensed:wght@300;500&family=Barlow:wght@300;400;500&family=Big+Shoulders+Display:wght@300;600&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
+  <!-- Pruebas de tipografía (ronda 2): Instrument Serif/Sans, Smooch Sans, Italiana, Jost; "Actual" = Barlow -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500&family=Barlow:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wdth,wght@75..100,400..600&family=Smooch+Sans:wght@200;500&family=Italiana&family=Jost:wght@200;300;400&display=swap">
   <link rel="stylesheet" href="tipografias.css">
   <script>
-    // Aplica la letra elegida antes de dibujar la página (por defecto, la opción 2)
-    (function () { var f = "2"; try { f = localStorage.getItem("sinapsis-letra-v2") || "2"; } catch (e) {}
-      if (f !== "actual") document.documentElement.dataset.fuente = f; })();
+    // Aplica la letra elegida antes de dibujar la página (por defecto, la opción A)
+    (function () { var f = "a"; try { f = localStorage.getItem("sinapsis-letra-v3") || "a"; } catch (e) {}
+      document.documentElement.dataset.fuente = f; })();
   </script>
 </head>
 <body class="pagina-interna">
@@ -144,9 +144,10 @@
   <div class="selector-letra" role="group" aria-label="Probar tipografías">
     <span class="selector-letra__titulo">Letra</span>
     <button type="button" data-letra="actual" aria-pressed="false">Actual</button>
-    <button type="button" data-letra="1" aria-pressed="false">1</button>
-    <button type="button" data-letra="2" aria-pressed="false">2</button>
-    <button type="button" data-letra="3" aria-pressed="false">3</button>
+    <button type="button" data-letra="a" aria-pressed="false">A</button>
+    <button type="button" data-letra="b" aria-pressed="false">B</button>
+    <button type="button" data-letra="c" aria-pressed="false">C</button>
+    <button type="button" data-letra="d" aria-pressed="false">D</button>
   </div>
 </div>
 

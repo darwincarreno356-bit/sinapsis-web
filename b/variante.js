@@ -200,9 +200,8 @@
   botonesLetra.forEach(function (b) {
     b.addEventListener("click", function () {
       var v = b.dataset.letra;
-      if (v === "actual") delete document.documentElement.dataset.fuente;
-      else document.documentElement.dataset.fuente = v;
-      try { localStorage.setItem("sinapsis-letra-v2", v); } catch (e) {}
+      document.documentElement.dataset.fuente = v;
+      try { localStorage.setItem("sinapsis-letra-v3", v); } catch (e) {}
       marcarLetra();
     });
   });
