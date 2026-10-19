@@ -151,3 +151,17 @@ Más el formulario, las redes y el mapa. Lo mismo se resume en el pie de todas l
 - **Logos de clientes solos, en blanco, sin placa.** TV Pública, Paka Paka y América tienen versiones preparadas con `scripts/logos-blanco.py`; el resto se pasa a blanco con CSS. Cada logo tiene su propia altura para que pesen parecido.
 - **El Nueve:** se usa el logo actual (anillo rojo + «elnueve»), tomado de elnueve.com.ar. El de 2018 quedó guardado en `contenido/imagenes/el-nueve-2018-viejo.png`.
 
+### Logos de clientes — revisión 18/10/2026
+
+| Cliente | Versión usada | Fuente | Estado |
+|---|---|---|---|
+| Netflix | Wordmark (2014–hoy) | Wikimedia Commons | Vigente |
+| NBC Telemundo | «T» (2018) | Wikimedia Commons | Vigente: el refresh de 2026 mantuvo la «T» |
+| El Nueve | Anillo rojo + «elnueve» | elnueve.com.ar | Vigente |
+| Paka Paka | Globo con carita (2025) | Wikimedia Commons | Vigente (2025–hoy) |
+| Encuentro | Barras azules + «encuentro» (2020) | Wikimedia Commons | Vigente; Logopedia anota un posible cambio en 2026, sin confirmar |
+| **Canal 7** (ex TV Pública) | Logo nuevo «canal 7 siete» (oct. 2026) | tvpublica.com.ar | **Actualizado** |
+| América TV | Cuatro cuadros + «américa» | americatv.com.ar | **Actualizado** |
+
+Los logos viejos quedaron en `contenido/imagenes/logos-viejos/`.
+

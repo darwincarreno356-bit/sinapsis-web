@@ -2,10 +2,12 @@
 fondo azul, sin placa.
 
 - La mayoría se pasan a blanco directamente con CSS (filtro), no necesitan archivo.
-- TV Pública y Paka Paka tienen detalles internos blancos (el sol, la cara) que
-  con el filtro desaparecen: acá se pintan sus colores de blanco y sus blancos
-  del azul de fondo, para que el dibujo se siga leyendo.
-- América TV viene sobre fondo blanco: acá se vuelve transparente ese fondo.
+- Paka Paka tiene detalles internos blancos (la cara) que con el filtro
+  desaparecen: acá se pintan sus colores de blanco y sus blancos del azul de
+  fondo, para que el dibujo se siga leyendo.
+- Canal 7 y América TV ya tienen versiones en blanco y oscuro hechas a mano
+  (canal-7-blanco.svg es la oficial; america-tv-blanco.svg lleva una cruz para
+  separar los cuatro cuadros). Las funciones para PNG quedan para logos futuros.
 - El Nueve (logo actual) trae el texto en blanco: para las placas blancas de la
   versión A se hace una copia con el texto oscuro.
 
@@ -109,7 +111,5 @@ def texto_blanco_a_oscuro(origen, destino):
     print("→", destino)
 
 
-svg_en_blanco("tv-publica.svg", "tv-publica-blanco.svg")
 svg_en_blanco("pakapaka.svg", "pakapaka-blanco.svg")
-fondo_blanco_a_transparente("america-tv.png", "america-tv-transparente.png", cortar_en_cuatro=True)
 texto_blanco_a_oscuro("el-nueve-2026.png", "el-nueve-2026-oscuro.png")
