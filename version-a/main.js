@@ -81,14 +81,14 @@
     var media = crear("div", "proyecto__media" + (esLogo ? " proyecto__media--logo" : ""));
     if (p.imagen) {
       var img = crear("img");
-      img.src = p.imagen;
+      img.src = "../" + p.imagen;
       img.alt = "";
       img.loading = "lazy";
       media.appendChild(img);
     }
     if (p.clip) {
       var video = crear("video");
-      video.src = p.clip;
+      video.src = "../" + p.clip;
       video.muted = true;
       video.loop = true;
       video.playsInline = true;

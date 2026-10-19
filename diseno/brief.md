@@ -1,6 +1,6 @@
 # Brief de diseño — nuevo sitio Sinapsis Producción
 
-> **Decisión 18/10/2026: se sigue trabajando sobre la versión B (carpeta `b/`).** La versión A (raíz del sitio) se conserva como referencia y no se borra.
+> **Decisión 18/10/2026: se sigue trabajando sobre la versión B.** Desde el 19/10/2026 la versión B está en la raíz del sitio y es lo único que se publica. La versión A se conserva en `version-a/` (no se publica, no se borra).
 
 Versión 2 · 18/10/2026 · Basado en las referencias que eligió Darwin.
 

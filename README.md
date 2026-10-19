@@ -2,11 +2,15 @@
 
 Nuevo sitio de [sinapsisproduccion.com](https://sinapsisproduccion.com), hecho desde cero como página estática y publicado con GitHub Pages.
 
+**Link de prueba:** https://darwincarreno356-bit.github.io/sinapsis-web/
+
 ## Carpetas
 
-- `index.html` — la home.
-- `css/estilos.css` — el diseño (colores, tipografía, tamaños).
-- `js/main.js` — menú, filtros, miniaturas en movimiento y reproductor de video.
+- `index.html`, `proyectos.html`, `nosotros.html`, `prensa.html` — el sitio (versión B).
+- `css/estilos.css` + `css/estilos-b.css` — el diseño. `css/tipografias.css` — la letra (opción D, Jost).
+- `js/variante.js` — menú, filtros, miniaturas en movimiento, reel de portada y reproductor de video.
+- `version-a/` — la versión A, archivada: se conserva pero **no se publica**.
+- `_config.yml` — qué carpetas quedan fuera del link público.
 - `js/proyectos.js` — los proyectos. **No se edita a mano**: se genera desde la planilla.
 - `assets/` — logo, fotos, miniaturas (`assets/img`) y clips de video (`assets/video`).
 - `diseno/` — brief de diseño y planilla de proyectos (`proyectos.csv`).

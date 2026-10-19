@@ -7,7 +7,7 @@
 (function () {
   "use strict";
 
-  var RAIZ = "../"; // las imágenes de js/proyectos.js están relativas a la raíz del sitio
+  var RAIZ = ""; // las rutas de js/proyectos.js ya son relativas a la raíz del sitio
   var esTactil = window.matchMedia("(hover: none)").matches;
   var reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var proyectos = (window.PROYECTOS || []).slice();

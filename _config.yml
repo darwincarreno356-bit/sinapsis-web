@@ -1,0 +1,11 @@
+# Configuración de GitHub Pages.
+# Se publica solo el sitio (versión B en la raíz). Todo lo que está en "exclude"
+# queda en el repositorio pero NO aparece en el link público.
+exclude:
+  - version-a      # versión A archivada, se conserva como referencia
+  - contenido      # contenido descargado del sitio viejo
+  - diseno         # brief, planilla y hojas de propuestas
+  - prototipo
+  - scripts
+  - README.md
+  - .claude

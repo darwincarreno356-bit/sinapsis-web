@@ -7,19 +7,17 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Proyectos · Sinapsis Producción</title>
   <meta name="description" content="Formatos originales, producciones, showrunning y consultorías de Sinapsis Producción.">
-  <link rel="icon" href="../assets/img/logo-sinapsis.png">
+  <link rel="icon" href="assets/img/logo-sinapsis.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Open+Sans:wght@700&display=swap">
-  <link rel="stylesheet" href="../css/estilos.css">
-  <link rel="stylesheet" href="estilos-b.css?v=6">
-  <!-- Pruebas de tipografía (ronda 2): Instrument Serif/Sans, Smooch Sans, Italiana, Jost; "Actual" = Barlow -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500&family=Barlow:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wdth,wght@75..100,400..600&family=Smooch+Sans:wght@200;500&family=Italiana&family=Jost:wght@200;300;400&display=swap">
-  <link rel="stylesheet" href="tipografias.css?v=6">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/estilos-b.css?v=7">
+  <!-- Tipografía: Jost -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap">
+  <link rel="stylesheet" href="css/tipografias.css?v=7">
   <script>
-    // Aplica la letra elegida antes de dibujar la página (por defecto, la opción D)
-    (function () { var f = "d"; try { f = localStorage.getItem("sinapsis-letra-v4") || "d"; } catch (e) {}
-      document.documentElement.dataset.fuente = f; })();
+    // Tipografía elegida: D (Jost fina). Las otras opciones quedan en css/tipografias.css por si se quieren volver a probar.
+    document.documentElement.dataset.fuente = "d";
   </script>
 </head>
 <body class="pagina-interna">
@@ -27,7 +25,7 @@
 <!-- ============ ENCABEZADO: logo + 4 ítems, sin desplegable ============ -->
 <header class="encabezado" id="encabezado">
   <a class="encabezado__logo" href="index.html" aria-label="Sinapsis Producción, inicio">
-    <img src="../assets/img/logo-sinapsis.png" alt="Sinapsis Producción · Formatos y contenidos" width="300" height="100">
+    <img src="assets/img/logo-sinapsis.png" alt="Sinapsis Producción · Formatos y contenidos" width="300" height="100">
   </a>
   <button class="encabezado__menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">
     <span class="visually-hidden">Abrir menú</span>
@@ -39,7 +37,7 @@
       <li class="menu__item"><a class="menu__link" href="nosotros.html">Nosotros</a></li>
       <li class="menu__item"><a class="menu__link" href="prensa.html">Prensa</a></li>
       <li class="menu__item"><a class="menu__link" href="#contacto">Contacto</a></li>
-      <li class="menu__item menu__idioma"><span aria-current="true">ES</span> / <a href="../en/index.html" lang="en">EN</a></li>
+      <li class="menu__item menu__idioma"><span aria-current="true">ES</span> / <a href="en/index.html" lang="en">EN</a></li>
     </ul>
   </nav>
 </header>
@@ -94,18 +92,6 @@
   <div class="pie-linea"><span>© <span id="anio">2026</span> Sinapsis Producción</span><span>Buenos Aires · Miami</span></div>
 </footer>
 
-<!-- Etiqueta para comparar versiones (se quita al publicar) -->
-<div class="etiqueta-variante" role="region" aria-label="Comparar versiones y tipografías">
-  <a href="../index.html">Versión A</a><span>Versión B</span>
-  <div class="selector-letra" role="group" aria-label="Probar tipografías">
-    <span class="selector-letra__titulo">Letra</span>
-    <button type="button" data-letra="actual" aria-pressed="false">Actual</button>
-    <button type="button" data-letra="a" aria-pressed="false">A</button>
-    <button type="button" data-letra="b" aria-pressed="false">B</button>
-    <button type="button" data-letra="c" aria-pressed="false">C</button>
-    <button type="button" data-letra="d" aria-pressed="false">D</button>
-  </div>
-</div>
 
 <dialog class="reproductor" id="reproductor" aria-labelledby="reproductor-titulo">
   <div class="reproductor__caja">
@@ -115,7 +101,7 @@
   </div>
 </dialog>
 
-<script src="../js/proyectos.js"></script>
-<script src="variante.js?v=6"></script>
+<script src="js/proyectos.js"></script>
+<script src="js/variante.js?v=7"></script>
 </body>
 </html>
