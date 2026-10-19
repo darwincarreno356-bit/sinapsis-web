@@ -1,5 +1,7 @@
 # Brief de diseño — nuevo sitio Sinapsis Producción
 
+> **Decisión 18/10/2026: se sigue trabajando sobre la versión B (carpeta `b/`).** La versión A (raíz del sitio) se conserva como referencia y no se borra.
+
 Versión 2 · 18/10/2026 · Basado en las referencias que eligió Darwin.
 
 ## Decisiones vigentes (versión 2)
@@ -158,7 +160,7 @@ Más el formulario, las redes y el mapa. Lo mismo se resume en el pie de todas l
 | Netflix | Wordmark (2014–hoy) | Wikimedia Commons | Vigente |
 | NBC Telemundo | «T» (2018) | Wikimedia Commons | Vigente: el refresh de 2026 mantuvo la «T» |
 | El Nueve | Anillo rojo + «elnueve» | elnueve.com.ar | Vigente |
-| Paka Paka | Globo con carita (2025) | Wikimedia Commons | Vigente (2025–hoy) |
+| Paka Paka | Globo con carita (2025) | Wikimedia Commons | Vigente (2025–hoy), confirmado por Darwin |
 | Encuentro | Barras azules + «encuentro» (2020) | Wikimedia Commons | Vigente; Logopedia anota un posible cambio en 2026, sin confirmar |
 | **Canal 7** (ex TV Pública) | Logo nuevo «canal 7 siete» (oct. 2026) | tvpublica.com.ar | **Actualizado** |
 | América TV | Cuatro cuadros + «américa» | americatv.com.ar | **Actualizado** |
