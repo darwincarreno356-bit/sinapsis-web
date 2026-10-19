@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propuestas de distribución · Sinapsis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500;600&family=Barlow:wght@300;400;500&display=swap">
+<style>
+/* Hoja de propuestas: cada página de la versión B dibujada como esquema,
+   con los colores y letras elegidos. Las notas numeradas explican cada cambio. */
+:root {
+  --fondo: #061f3f; --fondo-2: #0b2b52; --fondo-3: #12376a;
+  --linea: rgba(255,255,255,.14); --texto: #fff; --texto-2: #9fb3cf;
+  --acento: #30a8e0; --nota: #ffd166;
+  --titulos: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --cuerpo: "Barlow", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #031326; color: var(--texto); font-family: var(--cuerpo); font-weight: 300; }
+a { color: inherit; }
+
+/* Encabezado de la hoja */
+.hoja { max-width: 1240px; margin: 0 auto; padding: 32px 24px 80px; }
+.hoja h1 { font-family: var(--titulos); font-weight: 300; font-size: 44px; margin: 0 0 6px; }
+.hoja > p { color: var(--texto-2); margin: 0 0 24px; max-width: 60em; }
+.pestanas { display: flex; flex-wrap: wrap; gap: 6px; position: sticky; top: 0; z-index: 5; background: #031326; padding: 12px 0; }
+.pestanas button {
+  font: 500 13px/1 var(--titulos); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--texto-2); background: none; border: 1px solid var(--linea); border-radius: 999px; padding: 10px 16px; cursor: pointer;
+}
+.pestanas button[aria-selected="true"] { background: var(--texto); color: var(--fondo); border-color: var(--texto); }
+
+.vista { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; margin-top: 16px; align-items: start; }
+.vista[hidden] { display: none; }
+.notas { position: sticky; top: 64px; display: grid; gap: 14px; }
+.notas h2 { font: 600 13px var(--titulos); letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); margin: 0; }
+.notas ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; counter-reset: n; }
+.notas li { counter-increment: n; display: grid; grid-template-columns: 26px 1fr; gap: 10px; font-size: 14px; line-height: 1.45; color: #dbe5f2; }
+.notas li::before { content: counter(n); width: 22px; height: 22px; border-radius: 50%; background: var(--nota); color: #031326; font: 600 12px/22px var(--titulos); text-align: center; }
+
+/* Marco de navegador */
+.marco { border-radius: 10px; overflow: hidden; background: var(--fondo); box-shadow: 0 20px 60px rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.08); }
+.barra { height: 30px; background: #0a1a30; display: flex; align-items: center; gap: 6px; padding: 0 12px; }
+.barra i { width: 9px; height: 9px; border-radius: 50%; background: #2b3f5c; }
+.barra span { margin-left: 10px; font-size: 11px; color: var(--texto-2); }
+
+/* Elementos del esquema */
+.pg { --m: 28px; font-size: 13px; }
+.enc { display: flex; align-items: center; justify-content: space-between; padding: 16px var(--m); }
+.enc img { height: 30px; }
+.enc nav { display: flex; gap: 18px; font: 500 11px var(--titulos); letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); }
+.enc nav b { color: var(--texto); font-weight: 500; }
+.enc nav b::before { content: "["; color: var(--acento); } .enc nav b::after { content: "]"; color: var(--acento); }
+
+.fila { display: grid; grid-template-columns: 3fr 9fr; gap: 20px; padding: 26px var(--m); border-top: 1px solid var(--linea); position: relative; }
+.fila--sin-borde { border-top: 0; }
+.et { font: 600 11px var(--titulos); letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); }
+.tit { font: 300 34px/1.05 var(--titulos); margin: 0; }
+.grande { font: 300 22px/1.3 var(--titulos); margin: 0; max-width: 26em; }
+.grande b { font-weight: 500; }
+.chico { color: var(--texto-2); font-size: 12px; margin: 8px 0 0; }
+.link { font: 500 11px var(--titulos); letter-spacing: .12em; text-transform: uppercase; color: var(--texto); margin-top: 10px; display: inline-block; }
+.link::after { content: " →"; color: var(--acento); }
+
+.hero { position: relative; height: 330px; overflow: hidden; display: flex; align-items: flex-end; }
+.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,31,63,.95), rgba(6,31,63,.2) 60%, rgba(6,31,63,.5)); }
+.hero > div { position: relative; z-index: 1; width: 100%; padding: 0 var(--m) 24px; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.hero h3 { font: 300 36px/1 var(--titulos); margin: 0; max-width: 12em; }
+.hero .et { color: #dbe5f2; margin-top: 8px; display: block; }
+.btn { font: 500 10px var(--titulos); letter-spacing: .14em; text-transform: uppercase; border: 1px solid #fff; border-radius: 999px; padding: 8px 14px; white-space: nowrap; }
+.btn::before { content: "▶ "; }
+
+.img { position: relative; background: var(--fondo-3); border-radius: 4px; overflow: hidden; aspect-ratio: 16/9; }
+.img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cred { font: 500 10px/1.4 var(--titulos); letter-spacing: .12em; text-transform: uppercase; margin-top: 6px; }
+.cred span { display: block; color: var(--texto-2); }
+.g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.g2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.destacados { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; margin-bottom: 14px; }
+.destacados .lado { display: grid; gap: 12px; }
+.destacados .principal .img { aspect-ratio: auto; height: 100%; min-height: 220px; }
+
+.areas a { font: 500 15px var(--titulos); letter-spacing: .02em; text-decoration: none; }
+.areas a::after { content: " →"; color: var(--acento); }
+.logos { display: flex; flex-wrap: wrap; gap: 20px 26px; align-items: center; }
+.logos img { height: 18px; filter: brightness(0) invert(1); opacity: .9; }
+.logos img.b { filter: none; }
+
+.pie { display: flex; justify-content: space-between; gap: 16px; padding: 16px var(--m); border-top: 1px solid var(--linea); color: var(--texto-2); font-size: 11px; }
+
+.filtros { display: flex; gap: 14px; margin-top: 12px; font: 500 10px var(--titulos); letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); }
+.filtros b { color: var(--texto); font-weight: 500; } .filtros b::before { content: "["; color: var(--acento); } .filtros b::after { content: "]"; color: var(--acento); }
+.barra-info { display: flex; justify-content: space-between; margin-top: 12px; font-size: 11px; color: var(--texto-2); }
+.lista li { display: grid; grid-template-columns: 1.4fr 2.6fr auto; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--linea); font-size: 12px; }
+.lista { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linea); }
+.lista span { color: var(--texto-2); }
+.lista .medio { font: 600 10px var(--titulos); letter-spacing: .12em; text-transform: uppercase; color: var(--texto-2); }
+
+.ficha { display: grid; grid-template-columns: auto 1fr auto 1fr; gap: 6px 16px; font-size: 12px; }
+.ficha dt { color: var(--texto-2); } .ficha dd { margin: 0; }
+.navproy { display: flex; justify-content: space-between; padding: 18px var(--m); border-top: 1px solid var(--linea); font: 500 11px var(--titulos); letter-spacing: .12em; text-transform: uppercase; }
+
+.persona .foto { aspect-ratio: 1; border-radius: 4px; overflow: hidden; background: var(--fondo-3); }
+.persona .foto img { width: 100%; height: 100%; object-fit: cover; }
+.persona h4 { font: 500 16px var(--titulos); margin: 8px 0 2px; }
+.persona p { margin: 4px 0 0; font-size: 11px; color: var(--texto-2); }
+.persona .mas { font: 500 10px var(--titulos); letter-spacing: .12em; text-transform: uppercase; color: var(--acento); margin-top: 6px; display: inline-block; }
+.bloque h5 { font: 600 11px var(--titulos); letter-spacing: .14em; text-transform: uppercase; margin: 0 0 6px; color: var(--texto); }
+.bloque p { margin: 0; font-size: 12px; line-height: 1.6; color: #dbe5f2; }
+
+/* Notas sobre el esquema */
+.fila { padding-left: 46px; }
+.fila > .n { left: 14px !important; }
+.n { position: absolute; z-index: 3; width: 22px; height: 22px; border-radius: 50%; background: var(--nota); color: #031326; font: 600 12px/22px var(--titulos); text-align: center; box-shadow: 0 0 0 4px rgba(255,209,102,.25); }
+
+@media (max-width: 960px) {
+  .vista { grid-template-columns: 1fr; }
+  .notas { position: static; order: -1; }
+}
+@media (max-width: 640px) {
+  .pg { --m: 16px; }
+  .fila { grid-template-columns: 1fr; gap: 10px; }
+  .g3, .g4, .destacados, .g2 { grid-template-columns: 1fr 1fr; }
+  .enc nav { display: none; }
+  .hero h3 { font-size: 26px; }
+  .ficha { grid-template-columns: auto 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="hoja">
+  <h1>Propuestas de distribución</h1>
+  <p>Cada página de la versión B dibujada como esquema, con los colores y las letras elegidas. Los puntos amarillos numerados explican cada cambio. Los textos son los actuales y pueden cambiar: lo que importa es dónde va cada cosa.</p>
+
+  <div class="pestanas" role="tablist" aria-label="Páginas">
+    <button role="tab" aria-selected="true" data-v="inicio">Inicio</button>
+    <button role="tab" aria-selected="false" data-v="proyectos">Proyectos</button>
+    <button role="tab" aria-selected="false" data-v="ficha">Página de proyecto</button>
+    <button role="tab" aria-selected="false" data-v="nosotros">Nosotros</button>
+    <button role="tab" aria-selected="false" data-v="prensa">Prensa</button>
+    <button role="tab" aria-selected="false" data-v="contacto">Contacto</button>
+  </div>
+
+  <!-- ======================= INICIO ======================= -->
+  <section class="vista" id="v-inicio">
+    <div class="marco"><div class="barra"><i></i><i></i><i></i><span>sinapsisproduccion.com</span></div>
+      <div class="pg">
+        <div class="enc"><img src="../assets/img/logo-sinapsis.png" alt=""><nav><span>Proyectos</span><span>Nosotros</span><span>Prensa</span><span>Contacto</span><span>ES / EN</span></nav></div>
+        <div class="hero"><span class="n" style="right:16px;top:12px">1</span>
+          <img src="../assets/img/set-estudio.jpg" alt="">
+          <div><div><h3>Desarrollo y dirección de formatos y contenidos<span style="color:var(--acento)">.</span></h3><span class="et">Creación / Producción / Showrunning / Consultoría</span></div><span class="btn">Ver reel</span></div>
+        </div>
+        <div class="fila fila--sin-borde"><span class="n" style="left:8px;top:22px">2</span>
+          <span class="et">Sinapsis</span>
+          <div><p class="grande"><b>Sinapsis Producción</b> es una productora audiovisual especializada en crear, desarrollar, formatear y producir contenidos.</p>
+          <p class="chico">+30 años · 11 países · Buenos Aires y Miami</p><span class="link">Conocé al equipo</span></div>
+        </div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">3</span>
+          <div><span class="et">Proyectos</span><br><span class="link">Ver todos</span></div>
+          <div>
+            <div class="destacados">
+              <div class="principal"><div class="img"><img src="../assets/img/proyectos/yt-QhnDhdu8F44.jpg" alt=""></div><p class="cred">#Marcha<span>TVP / Encuentro / Cont.ar</span></p></div>
+              <div class="lado">
+                <div><div class="img"><img src="../assets/img/proyectos/yt-vMKHsfBA9eY.jpg" alt=""></div><p class="cred">El Domo del Dinero<span>NBC Telemundo</span></p></div>
+                <div><div class="img"><img src="../assets/img/proyectos/yt-09Cy3v4ye2o.jpg" alt=""></div><p class="cred">Combate Argentina<span>El Nueve</span></p></div>
+              </div>
+            </div>
+            <div class="g3">
+              <div><div class="img"><img src="../assets/img/proyectos/yt-m04lYaLcTfU.jpg" alt=""></div><p class="cred">La Hora Exacta<span>El Nueve</span></p></div>
+              <div><div class="img"><img src="../assets/img/proyectos/yt-_odTz30yTEA.jpg" alt=""></div><p class="cred">Rumuvi<span>UN3 TV / Flow</span></p></div>
+              <div><div class="img"><img src="../assets/img/proyectos/yt-09ZDJAlEjWw.jpg" alt=""></div><p class="cred">Dilema<span>América TV · Latina · Bolivisión</span></p></div>
+            </div>
+          </div>
+        </div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">4</span>
+          <span class="et">Qué hacemos</span>
+          <div class="g4 areas"><a>Formatos originales</a><a>Producciones</a><a>Showrunning</a><a>Consultoría</a></div>
+        </div>
+        <div class="fila"><span class="et">Producimos para</span>
+          <div class="logos">
+            <img src="../assets/img/clientes/netflix.svg" alt=""><img src="../assets/img/clientes/nbc-telemundo.svg" alt="" style="height:26px"><img src="../assets/img/clientes/el-nueve-2026.png" alt=""><img class="b" src="../assets/img/clientes/pakapaka-blanco.svg" alt="" style="height:22px"><img src="../assets/img/clientes/encuentro.svg" alt="" style="height:24px"><img class="b" src="../assets/img/clientes/canal-7-blanco.svg" alt=""><img class="b" src="../assets/img/clientes/america-tv-blanco.svg" alt="" style="height:22px">
+          </div>
+        </div>
+        <div class="pie"><span class="n" style="position:relative;margin-right:8px">5</span><span>Buenos Aires · Miami</span><span>info@sinapsisproduccion.com</span><span>◯ ◯</span></div>
+      </div>
+    </div>
+    <aside class="notas"><h2>Cambios en Inicio</h2><ol>
+      <li><span>El reel baja al <b>80% de la pantalla</b>, así asoma lo que sigue e invita a bajar.</span></li>
+      <li><span>La frase de presentación va en la <b>columna de etiqueta</b>, con los datos clave en una sola línea chica.</span></li>
+      <li><span>Proyectos con jerarquía: <b>1 grande + 2 chicos + 3 iguales</b>, en lugar de 6 iguales. El grande es el proyecto más importante del momento.</span></li>
+      <li><span>Vuelve <b>"Qué hacemos" como 4 links de texto</b>, sin imágenes. Cada uno abre Proyectos ya filtrado.</span></li>
+      <li><span>El pie queda en <b>una sola línea</b>: los datos completos pasan a la página de Contacto.</span></li>
+    </ol></aside>
+  </section>
+
+  <!-- ======================= PROYECTOS ======================= -->
+  <section class="vista" id="v-proyectos" hidden>
+    <div class="marco"><div class="barra"><i></i><i></i><i></i><span>sinapsisproduccion.com/proyectos</span></div>
+      <div class="pg">
+        <div class="enc"><img src="../assets/img/logo-sinapsis.png" alt=""><nav><b>Proyectos</b><span>Nosotros</span><span>Prensa</span><span>Contacto</span><span>ES / EN</span></nav></div>
+        <div class="fila fila--sin-borde"><span class="n" style="left:8px;top:22px">1</span>
+          <span></span>
+          <div><h3 class="tit">Proyectos<span style="color:var(--acento)">.</span></h3>
+            <div class="filtros"><b>Todos</b><span>Formatos originales</span><span>Producciones</span><span>Showrunning</span></div>
+            <div class="barra-info"><span>21 proyectos</span><span class="n" style="position:relative;display:inline-block;margin-right:6px">2</span><span>Ver: <b style="color:#fff">▦ Grilla</b> · ☰ Lista</span></div>
+          </div>
+        </div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">3</span>
+          <span></span>
+          <div class="g3">
+            <div><div class="img"><img src="../assets/img/proyectos/yt-QhnDhdu8F44.jpg" alt=""></div><p class="cred">#Marcha<span>TVP / Encuentro · 2019</span></p></div>
+            <div><div class="img"><img src="../assets/img/proyectos/yt-vMKHsfBA9eY.jpg" alt=""></div><p class="cred">El Domo del Dinero<span>NBC Telemundo</span></p></div>
+            <div><div class="img"><img src="../assets/img/proyectos/yt-09Cy3v4ye2o.jpg" alt=""></div><p class="cred">Combate Argentina<span>El Nueve · 2014–2016</span></p></div>
+            <div><div class="img"><img src="../assets/img/proyectos/yt-yD9YVSGufbM.jpg" alt=""></div><p class="cred">Cien Latinos Dijeron<span>Estrella TV · 2018–2021</span></p></div>
+            <div><div class="img"><img src="../assets/img/proyectos/yt-GV7avs9RNUY.jpg" alt=""></div><p class="cred">México Tiene Talento<span>TV Azteca · 2015</span></p></div>
+            <div><div class="img"><img src="../assets/img/proyectos/yt-VET7HuigXFE.jpg" alt=""></div><p class="cred">La Fábrica del Deseo<span>TVP / Encuentro · 2017</span></p></div>
+          </div>
+        </div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">4</span>
+          <span class="et">Vista de lista</span>
+          <ul class="lista">
+            <li><b>2019 · #Marcha</b><span>TVP / Encuentro / Cont.ar</span><span>Formato original</span></li>
+            <li><b>2018–2021 · Cien Latinos Dijeron</b><span>Estrella TV / Fremantle</span><span>Showrunning</span></li>
+            <li><b>2017 · Experimentores 1</b><span>Paka Paka / TVP</span><span>Producción</span></li>
+          </ul>
+        </div>
+        <div class="fila"><span class="et">Consultoría</span>
+          <ul class="lista">
+            <li><b>Tigo Sports</b><span>Procesos de producción, eficiencia, contenidos</span><span>2019–2020</span></li>
+            <li><b>Suelta la Sopa · NBC Telemundo</b><span>Consultoría de contenidos</span><span>2020</span></li>
+          </ul>
+        </div>
+        <div class="pie"><span>Buenos Aires · Miami</span><span>info@sinapsisproduccion.com</span><span>◯ ◯</span></div>
+      </div>
+    </div>
+    <aside class="notas"><h2>Cambios en Proyectos</h2><ol>
+      <li><span>Los <b>filtros pasan debajo del título</b>, a la vista, en lugar de quedar a la derecha.</span></li>
+      <li><span>Se muestra <b>cuántos proyectos hay</b> y se puede cambiar entre <b>grilla y lista</b>.</span></li>
+      <li><span>Los <b>créditos van a la izquierda</b> (hoy están centrados), con canal y año.</span></li>
+      <li><span>La <b>vista de lista</b> (año · título · canal · tipo) sirve para recorrer rápido y para los proyectos sin buena imagen.</span></li>
+    </ol></aside>
+  </section>
+
+  <!-- ======================= FICHA ======================= -->
+  <section class="vista" id="v-ficha" hidden>
+    <div class="marco"><div class="barra"><i></i><i></i><i></i><span>sinapsisproduccion.com/proyectos/marcha</span></div>
+      <div class="pg">
+        <div class="enc"><img src="../assets/img/logo-sinapsis.png" alt=""><nav><b>Proyectos</b><span>Nosotros</span><span>Prensa</span><span>Contacto</span><span>ES / EN</span></nav></div>
+        <div style="position:relative"><span class="n" style="left:16px;top:12px">1</span>
+          <div class="img" style="border-radius:0"><img src="../assets/img/proyectos/yt-QhnDhdu8F44.jpg" alt=""><span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:#fff;color:var(--fondo);display:grid;place-items:center;font-size:18px">▶</span></div>
+        </div>
+        <div class="fila fila--sin-borde"><span class="n" style="left:8px;top:22px">2</span>
+          <h3 class="tit" style="font-size:26px">#Marcha</h3>
+          <p class="grande" style="font-size:18px">Proyecto transmedia documental: el genocidio nazi desde la mirada adolescente. Grabado en Polonia, Israel, Argentina y Ciudad del Vaticano.</p>
+        </div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">3</span>
+          <span class="et">Ficha</span>
+          <dl class="ficha"><dt>Año</dt><dd>2019</dd><dt>Canal</dt><dd>TVP / Encuentro / Cont.ar</dd><dt>Formato</dt><dd>Serie TV, largometraje y micros web</dd><dt>Países</dt><dd>Argentina · Polonia · Israel · Vaticano</dd><dt>Trabajo</dt><dd>Formato original + Producción</dd></dl>
+        </div>
+        <div class="fila"><span class="et">Premios</span>
+          <p class="bloque" style="margin:0"><span style="color:var(--acento)">Premio Argentores 2019</span> · Mejor Guion de Documental para TV<br><span style="color:var(--acento)">Jewish Film Festival 2019</span> · Primer Premio Voto del Público</p>
+        </div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">4</span>
+          <span class="et">Fotos</span>
+          <div class="g3"><div class="img"><img src="../assets/img/proyectos/marcha-foto.jpg" alt=""></div><div class="img"></div><div class="img"></div></div>
+        </div>
+        <div class="navproy"><span>← La Fábrica del Deseo</span><span class="n" style="position:relative">5</span><span>Rumuvi →</span></div>
+      </div>
+    </div>
+    <aside class="notas"><h2>Página de cada proyecto (nueva)</h2><ol>
+      <li><span>El <b>video primero, a todo el ancho</b>, como en Canada. Reemplaza la ventana emergente de hoy.</span></li>
+      <li><span>Título en la columna de etiqueta y <b>descripción corta</b> al lado.</span></li>
+      <li><span>La <b>ficha técnica ordenada en dos columnas</b>: año, canal, formato, países y tipo de trabajo.</span></li>
+      <li><span><b>Fotos opcionales</b> del rodaje o del programa.</span></li>
+      <li><span>Links al <b>proyecto anterior y siguiente</b>, para seguir recorriendo sin volver atrás. Cada proyecto tiene su propio link para compartir.</span></li>
+    </ol></aside>
+  </section>
+
+  <!-- ======================= NOSOTROS ======================= -->
+  <section class="vista" id="v-nosotros" hidden>
+    <div class="marco"><div class="barra"><i></i><i></i><i></i><span>sinapsisproduccion.com/nosotros</span></div>
+      <div class="pg">
+        <div class="enc"><img src="../assets/img/logo-sinapsis.png" alt=""><nav><span>Proyectos</span><b>Nosotros</b><span>Prensa</span><span>Contacto</span><span>ES / EN</span></nav></div>
+        <div class="fila fila--sin-borde"><span class="n" style="left:8px;top:22px">1</span>
+          <span></span>
+          <div><h3 class="tit">Nosotros<span style="color:var(--acento)">.</span></h3>
+          <p class="grande" style="margin-top:14px"><b>Sinapsis Producción</b> es una productora audiovisual especializada en crear, desarrollar, formatear y producir contenidos, liderada por profesionales con más de 30 años de experiencia.</p></div>
+        </div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">2</span>
+          <span class="et">Qué hacemos</span>
+          <div class="g2">
+            <div class="bloque"><h5>Formatos originales</h5><p>La Hora Exacta, El Domo del Dinero, Dilema…</p><span class="link">Ver</span></div>
+            <div class="bloque"><h5>Producciones</h5><p>Experimentores, Rumuvi, Alunizados…</p><span class="link">Ver</span></div>
+            <div class="bloque"><h5>Showrunning</h5><p>Cien Latinos Dijeron, X Factor (US)…</p><span class="link">Ver</span></div>
+            <div class="bloque"><h5>Consultoría</h5><p>Artística y de producción. Perspectiva de género.</p><span class="link">Ver</span></div>
+          </div>
+        </div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">3</span>
+          <span class="et">Equipo</span>
+          <div class="g3">
+            <div class="persona"><div class="foto"><img src="../assets/img/equipo/marcos-gorban.png" alt=""></div><h4>Marcos Gorban</h4><span class="et">Dirección General</span><p>Showrunner y consultor internacional. Ex coordinador de entretenimientos de Telefe.</p><span class="mas">Ver bio +</span></div>
+            <div class="persona"><div class="foto"><img src="../assets/img/equipo/silvina-acosta.png" alt=""></div><h4>Silvina Acosta</h4><span class="et">Socia Gerente</span><p>Actriz, psicóloga y contenidista. Lidera la consultoría con perspectiva de género.</p><span class="mas">Ver bio +</span></div>
+            <div class="persona"><div class="foto"><img src="../assets/img/equipo/mario-borovich.png" alt=""></div><h4>Mario Borovich</h4><span class="et">Director de contenidos</span><p>Contenidista, productor y guionista. Autor y director de Rumuvi.</p><span class="mas">Ver bio +</span></div>
+          </div>
+        </div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">4</span>
+          <span class="et">Oficinas</span>
+          <div class="g2"><div class="bloque"><h5>Buenos Aires</h5><p>Av. Corrientes 4035 (timbre 3)</p></div><div class="bloque"><h5>Miami</h5><p>Florida, Estados Unidos</p></div></div>
+        </div>
+        <div class="pie"><span>Buenos Aires · Miami</span><span>info@sinapsisproduccion.com</span><span>◯ ◯</span></div>
+      </div>
+    </div>
+    <aside class="notas"><h2>Cambios en Nosotros</h2><ol>
+      <li><span>Arriba, <b>2 o 3 frases en letra grande</b>. Es todo el texto institucional.</span></li>
+      <li><span>"Qué hacemos" en <b>2 × 2</b>, con una línea y un link a los proyectos de cada área.</span></li>
+      <li><span>El <b>equipo en una fila de 3</b>: foto, nombre, cargo y resumen de 2 líneas. La biografía completa se despliega con "Ver bio +". Hoy el equipo ocupa casi la mitad de la página.</span></li>
+      <li><span>Las <b>oficinas</b> cierran la página. La página pasa de 3 pantallas a unas 2.</span></li>
+    </ol></aside>
+  </section>
+
+  <!-- ======================= PRENSA ======================= -->
+  <section class="vista" id="v-prensa" hidden>
+    <div class="marco"><div class="barra"><i></i><i></i><i></i><span>sinapsisproduccion.com/prensa</span></div>
+      <div class="pg">
+        <div class="enc"><img src="../assets/img/logo-sinapsis.png" alt=""><nav><span>Proyectos</span><span>Nosotros</span><b>Prensa</b><span>Contacto</span><span>ES / EN</span></nav></div>
+        <div class="fila fila--sin-borde"><span></span><h3 class="tit">Prensa<span style="color:var(--acento)">.</span></h3></div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">1</span>
+          <span class="et">2021</span>
+          <ul class="lista"><li><span class="medio">Télam</span><b>Experimentores: ciencia para las infancias con Tomás Fonzi</b><span>↗</span></li><li><span class="medio">Tiempo Argentino</span><b>Entrevista a Tomás Fonzi sobre Experimentores</b><span>↗</span></li></ul>
+        </div>
+        <div class="fila"><span class="et">2019</span>
+          <ul class="lista"><li><span class="medio">Infobae</span><b>#Marcha, nominado a los Martín Fierro</b><span>↗</span></li><li><span class="medio">Página/12</span><b>La Shoá vista desde ojos jóvenes</b><span>↗</span></li></ul>
+        </div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">2</span>
+          <span class="et">Sin fecha</span>
+          <ul class="lista"><li><span class="medio">Produ</span><b>Los formatos Dilema y Genios triunfan en Bolivia</b><span>↗</span></li><li><span class="medio">Clarín</span><b>Entrevista a Marcos Gorban</b><span>↗</span></li></ul>
+        </div>
+        <div class="pie"><span>Buenos Aires · Miami</span><span>info@sinapsisproduccion.com</span><span>◯ ◯</span></div>
+      </div>
+    </div>
+    <aside class="notas"><h2>Cambios en Prensa</h2><ol>
+      <li><span>Las notas se <b>agrupan por año</b>, con el año en la columna de etiqueta.</span></li>
+      <li><span>Algunas notas no tienen fecha: <b>hay que completarlas</b> para ordenarlas.</span></li>
+    </ol></aside>
+  </section>
+
+  <!-- ======================= CONTACTO ======================= -->
+  <section class="vista" id="v-contacto" hidden>
+    <div class="marco"><div class="barra"><i></i><i></i><i></i><span>sinapsisproduccion.com/contacto</span></div>
+      <div class="pg">
+        <div class="enc"><img src="../assets/img/logo-sinapsis.png" alt=""><nav><span>Proyectos</span><span>Nosotros</span><span>Prensa</span><b>Contacto</b><span>ES / EN</span></nav></div>
+        <div class="fila fila--sin-borde"><span></span><h3 class="tit">Contacto<span style="color:var(--acento)">.</span></h3></div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">1</span>
+          <span class="et">Oficinas</span>
+          <div class="g2">
+            <div class="bloque"><h5>Buenos Aires</h5><p>Av. Corrientes 4035 (timbre 3)<br>C.A.B.A., Argentina<br>+54 (a completar)<br>info@sinapsisproduccion.com</p></div>
+            <div class="bloque"><h5>Miami</h5><p>(dirección a completar)<br>Florida, Estados Unidos<br>+1 (a completar)<br>(email a completar)</p></div>
+          </div>
+        </div>
+        <div class="fila"><span class="n" style="left:8px;top:22px">2</span>
+          <span class="et">Escribinos</span>
+          <ul class="lista"><li><b>Proyectos y formatos</b><span>(email a completar)</span><span></span></li><li><b>Prensa</b><span>(email a completar)</span><span></span></li></ul>
+        </div>
+        <div class="fila"><span class="et">Redes</span><span style="font-size:18px">◯ ◯</span></div>
+        <div class="pie"><span class="n" style="position:relative;margin-right:8px">3</span><span>Buenos Aires · Miami</span><span>info@sinapsisproduccion.com</span><span>◯ ◯</span></div>
+      </div>
+    </div>
+    <aside class="notas"><h2>Contacto (página nueva)</h2><ol>
+      <li><span><b>Cada oficina en su bloque</b>, con dirección, teléfono y email a la vista, como en Canada.</span></li>
+      <li><span>Un <b>email por tema</b> (proyectos, prensa), si existen. Si no, queda solo info@.</span></li>
+      <li><span>Con esta página, el <b>pie de todas las páginas se achica a una línea</b>.</span></li>
+    </ol></aside>
+  </section>
+</div>
+
+<script>
+  // Pestañas: muestra una página por vez
+  var botones = document.querySelectorAll(".pestanas button");
+  botones.forEach(function (b) {
+    b.addEventListener("click", function () {
+      botones.forEach(function (x) { x.setAttribute("aria-selected", String(x === b)); });
+      document.querySelectorAll(".vista").forEach(function (v) { v.hidden = v.id !== "v-" + b.dataset.v; });
+      window.scrollTo({ top: 0 });
+    });
+  });
+</script>
+</body>
+</html>
