@@ -212,3 +212,29 @@
 @media (prefers-reduced-motion: reduce) {
   .reel-portada__video { display: none; }
 }
+
+/* ==========================================================================
+   Ajustes 01/11/2026: clientes, partners y contacto centrados
+   ========================================================================== */
+
+/* Home: "Producimos y desarrollamos para" y "Partners" centrados, con sus logos debajo */
+.pagina-inicio .clientes {
+  flex-direction: column; align-items: center; text-align: center;
+  gap: 22px; padding-block: 36px;
+}
+.pagina-inicio .clientes .etiqueta { flex: none; }
+.pagina-inicio .clientes__lista--solo-logos { justify-content: center; max-width: 1100px; }
+
+/* Contacto: bloque más chico y centrado */
+.contacto-cta__cuerpo {
+  max-width: 900px; text-align: center;
+  padding: clamp(56px, 7vw, 96px) var(--margen) clamp(40px, 5vw, 64px);
+}
+.cta-titulo { font-size: clamp(26px, 3.2vw, 44px); }
+html[data-fuente] .cta-titulo { font-size: clamp(26px, 3.2vw, 44px); }
+.cta-bajada { margin-left: auto; margin-right: auto; font-size: 16px; }
+.cta-acciones { justify-content: center; margin-top: 26px; }
+.mail-grande { font-size: clamp(18px, 1.8vw, 24px); }
+.oficinas-linea { text-align: center; margin-top: clamp(40px, 5vw, 56px); }
+.oficinas-linea .redes { justify-content: center; }
+.pie-linea { justify-content: center; gap: 8px 28px; }
