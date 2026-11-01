@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Borrador: que los buscadores no lo indexen hasta publicar el sitio definitivo -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Consultoría · Sinapsis Producción</title>
+  <meta name="description" content="Consultoría artística y de producción, y capacitación y consultoría de contenidos con perspectiva de género y diversidad.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/iconos/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/iconos/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/img/iconos/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/estilos-b.css?v=9">
+  <!-- Tipografía: Jost -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap">
+  <link rel="stylesheet" href="css/tipografias.css?v=7">
+  <script>
+    // Tipografía elegida: D (Jost fina). Las otras opciones quedan en css/tipografias.css por si se quieren volver a probar.
+    document.documentElement.dataset.fuente = "d";
+  </script>
+</head>
+<body class="pagina-interna">
+
+<!-- ============ ENCABEZADO: logo + 4 ítems, sin desplegable ============ -->
+<header class="encabezado" id="encabezado">
+  <a class="encabezado__logo" href="index.html" aria-label="Sinapsis Producción, inicio">
+    <img src="assets/img/logo-sinapsis.png" alt="Sinapsis Producción · Formatos y contenidos" width="300" height="100">
+  </a>
+  <button class="encabezado__menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">
+    <span class="visually-hidden">Abrir menú</span>
+    <span class="hamburguesa" aria-hidden="true"></span>
+  </button>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <ul class="menu__lista">
+      <li class="menu__item"><a class="menu__link" href="proyectos.html">Proyectos</a></li>
+      <li class="menu__item menu__item--desplegable">
+        <button class="menu__link menu__toggle" aria-expanded="false" aria-controls="sub-nosotros" aria-current="page">Nosotros</button>
+        <ul class="submenu" id="sub-nosotros">
+          <li><a href="nosotros.html">Quiénes somos</a></li>
+          <li><a href="nosotros.html#equipo">Equipo</a></li>
+          <li><a href="consultoria.html#artistica" aria-current="page">Consultoría artística y de producción</a></li>
+          <li><a href="consultoria.html#genero">Perspectiva de género y diversidad</a></li>
+        </ul>
+      </li>
+      <li class="menu__item"><a class="menu__link" href="prensa.html">Prensa</a></li>
+      <li class="menu__item"><a class="menu__link" href="#contacto">Contacto</a></li>
+      <li class="menu__item menu__idioma"><span aria-current="true">ES</span> / <a href="en/index.html" lang="en">EN</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <header class="cabecera-pagina">
+    <h1>Consultoría<span class="punto">.</span></h1>
+  </header>
+
+  <!-- 1. Consultoría artística y de producción -->
+  <section class="seccion quienes" id="artistica" aria-labelledby="artistica-titulo">
+    <h2 class="etiqueta" id="artistica-titulo">Consultoría artística y de producción</h2>
+    <ul class="consultorias">
+      <li class="consultoria">
+        <div class="consultoria__logo"><img src="assets/img/consultoria/tigo-sports.png" alt="Tigo Sports" loading="lazy"></div>
+        <div><h3>Tigo Sports</h3><p>Consultoría 360 del canal.</p><p>Procesos de producción / Eficiencia / Contenidos y programación.</p><span class="anio">2019 / 2020</span></div>
+      </li>
+      <li class="consultoria">
+        <div class="consultoria__logo"><img src="assets/img/consultoria/suelta-la-sopa.png" alt="Suelta la Sopa" loading="lazy"></div>
+        <div><h3>Suelta la Sopa</h3><p>Consultoría de contenidos.</p><p>360Powwow / Telemundo.</p><span class="anio">2020</span></div>
+      </li>
+      <li class="consultoria">
+        <div class="consultoria__logo"><img src="assets/img/consultoria/ecuavisa.jpg" alt="Ecuavisa" loading="lazy"></div>
+        <div><h3>Prueba de Amor</h3><p>Consultoría de formato.</p><p>Coproducción Ecuavisa / Mediapro US.</p><span class="anio">2019</span></div>
+      </li>
+      <li class="consultoria">
+        <div class="consultoria__logo"><img src="assets/img/consultoria/univision.png" alt="Univision" loading="lazy"></div>
+        <div><h3>Univision</h3><p>Consultoría para la presidencia de Entretenimientos con incidencia directa en Despierta América y El Gordo y La Flaca.</p><span class="anio">2016 / 2017</span></div>
+      </li>
+      <li class="consultoria">
+        <div class="consultoria__logo"><img src="assets/img/consultoria/tv-azteca.png" alt="TV Azteca" loading="lazy"></div>
+        <div><h3>Cocineros Mexicanos</h3><p>Consultoría de formato.</p><p>TV Azteca, México.</p><span class="anio">2017</span></div>
+      </li>
+      <li class="consultoria">
+        <div class="consultoria__logo"><img src="assets/img/consultoria/endemol.png" alt="Endemol" loading="lazy"></div>
+        <div><h3>Gran Hermano</h3><p>Consultoría de formato.</p><p>City TV, Colombia.</p><span class="anio">2012</span></div>
+      </li>
+      <li class="consultoria">
+        <div class="consultoria__logo"><img src="assets/img/consultoria/latina.png" alt="Latina" loading="lazy"></div>
+        <div><h3>Latina</h3><p>Consultoría en gestión de programación, contenidos y procesos de producción.</p><p>Perú.</p><span class="anio">2012</span></div>
+      </li>
+      <li class="consultoria">
+        <div class="consultoria__logo"><img src="assets/img/consultoria/gv-producciones.png" alt="Logo de productora" loading="lazy"></div>
+        <!-- En el sitio original este logo repetía el texto de Univision: falta confirmar qué consultoría fue -->
+        <div><h3>Productora</h3><p>Descripción a confirmar.</p></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 2. Capacitación y consultoría de contenidos con perspectiva de género y diversidad -->
+  <section class="seccion quienes" id="genero" aria-labelledby="genero-titulo">
+    <h2 class="etiqueta" id="genero-titulo">Perspectiva de género y diversidad</h2>
+    <div class="quienes__texto">
+      <p class="texto-grande">Capacitación y consultoría de contenidos con perspectiva de género y diversidad.</p>
+      <p>Directora: <a class="enlace" href="nosotros.html#equipo">Silvina Acosta</a></p>
+      <div class="genero__servicios">
+        <div>
+          <h3>Curaduría</h3>
+          <p>Curaduría de perspectiva de género en guiones y contenidos.</p>
+          <p>La curaduría tiene como objetivo trabajar junto con el equipo autoral y la producción en la revisión de guiones para aplicar la perspectiva de género y el respeto por la diversidad.</p>
+        </div>
+        <div>
+          <h3>Capacitación</h3>
+          <p>Capacitación y training para autores/as, directores/as y productores/as.</p>
+          <p>El taller de capacitación para guionistas, directores/as y productores/as consiste en tres encuentros presenciales o virtuales para brindar herramientas teóricas y prácticas sobre perspectiva de género para sus contenidos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion quienes" aria-labelledby="genero-proyectos-titulo">
+    <h2 class="etiqueta" id="genero-proyectos-titulo">Proyectos</h2>
+    <ul class="genero__proyectos">
+      <li><div class="genero__img"><img src="assets/img/consultoria/la-hora-exacta.jpg" alt="" loading="lazy"></div><p class="proyecto__credito">La Hora Exacta</p></li>
+      <li><div class="genero__img"><img src="assets/img/consultoria/experimentores-2.jpg" alt="" loading="lazy"></div><p class="proyecto__credito">Experimentores 2</p></li>
+      <li><div class="genero__img genero__img--logo"><img src="assets/img/consultoria/oeste-films.jpg" alt="" loading="lazy"></div><p class="proyecto__credito">Oeste Films</p></li>
+      <li><div class="genero__img"><img src="assets/img/consultoria/mau-nieto.jpg" alt="" loading="lazy"></div><p class="proyecto__credito">Mau Nieto</p></li>
+    </ul>
+  </section>
+</main>
+
+<!-- ============ CONTACTO: llamada grande (opción 1) ============ -->
+<footer class="contacto-cta" id="contacto">
+  <div class="contacto-cta__cuerpo">
+    <h2 class="cta-titulo">¿Tenés un proyecto?<br>Hablemos<span class="punto">.</span></h2>
+    <p class="cta-bajada">Desarrollamos, producimos y acompañamos formatos para canales y plataformas de toda la región.</p>
+    <div class="cta-acciones">
+      <a class="mail-grande" href="mailto:info@sinapsisproduccion.com">info@sinapsisproduccion.com</a>
+      <a class="boton boton--lleno" href="mailto:info@sinapsisproduccion.com">Escribinos</a>
+    </div>
+    <div class="oficinas-linea">
+      <div><h3 class="etiqueta">Buenos Aires</h3><address>Av. Corrientes 4035 (timbre 3)<br>Buenos Aires, Argentina</address></div>
+      <div><h3 class="etiqueta">Miami</h3><address>Miami, Florida<br>Estados Unidos</address></div>
+      <div><h3 class="etiqueta">Redes</h3>
+        <ul class="redes">
+          <li><a href="https://www.instagram.com/sinapsisprodu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg></a></li>
+          <li><a href="https://twitter.com/sinapsisprodu" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.19L2 3h6.33l4.37 5.77L17.75 3Zm-1.08 16.17h1.7L7.4 4.74H5.58l11.09 14.43Z"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="pie-linea"><span>© <span id="anio">2026</span> Sinapsis Producción</span><span>Buenos Aires · Miami</span></div>
+</footer>
+
+
+<dialog class="reproductor" id="reproductor" aria-labelledby="reproductor-titulo">
+  <div class="reproductor__caja">
+    <button class="reproductor__cerrar" id="reproductor-cerrar" aria-label="Cerrar">×</button>
+    <div class="reproductor__video" id="reproductor-video"></div>
+    <div class="reproductor__ficha" id="reproductor-ficha"><h2 id="reproductor-titulo"></h2></div>
+  </div>
+</dialog>
+
+<script src="js/proyectos.js"></script>
+<script src="js/variante.js?v=9"></script>
+</body>
+</html>

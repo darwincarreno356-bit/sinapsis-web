@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/estilos.css">
-  <link rel="stylesheet" href="css/estilos-b.css?v=8">
+  <link rel="stylesheet" href="css/estilos-b.css?v=9">
   <!-- Tipografía: Jost -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap">
   <link rel="stylesheet" href="css/tipografias.css?v=7">
@@ -36,7 +36,15 @@
   <nav class="menu" id="menu" aria-label="Principal">
     <ul class="menu__lista">
       <li class="menu__item"><a class="menu__link" href="proyectos.html">Proyectos</a></li>
-      <li class="menu__item"><a class="menu__link" href="nosotros.html" aria-current="page">Nosotros</a></li>
+      <li class="menu__item menu__item--desplegable">
+        <button class="menu__link menu__toggle" aria-expanded="false" aria-controls="sub-nosotros" aria-current="page">Nosotros</button>
+        <ul class="submenu" id="sub-nosotros">
+          <li><a href="nosotros.html" aria-current="page">Quiénes somos</a></li>
+          <li><a href="nosotros.html#equipo">Equipo</a></li>
+          <li><a href="consultoria.html#artistica">Consultoría artística y de producción</a></li>
+          <li><a href="consultoria.html#genero">Perspectiva de género y diversidad</a></li>
+        </ul>
+      </li>
       <li class="menu__item"><a class="menu__link" href="prensa.html">Prensa</a></li>
       <li class="menu__item"><a class="menu__link" href="#contacto">Contacto</a></li>
       <li class="menu__item menu__idioma"><span aria-current="true">ES</span> / <a href="en/index.html" lang="en">EN</a></li>
@@ -67,11 +75,11 @@
       <div class="area"><h3>Formatos y desarrollos originales</h3><p>La Hora Exacta, El Domo del Dinero, Dilema, Combate Argentina, #Marcha y más.</p><a href="proyectos.html#formatos">Ver formatos →</a></div>
       <div class="area"><h3>Nuestras producciones</h3><p>Experimentores, Rumuvi, Alunizados, Instantáneas y más.</p><a href="proyectos.html#producciones">Ver producciones →</a></div>
       <div class="area"><h3>Showrunning</h3><p>Cien Latinos Dijeron, X Factor (US), México Tiene Talento y más.</p><a href="proyectos.html#showrunning">Ver showrunning →</a></div>
-      <div class="area"><h3>Consultoría</h3><p>Consultoría artística y de producción. Contenidos con perspectiva de género y diversidad.</p><a href="proyectos.html#consultoria">Ver consultorías →</a></div>
+      <div class="area"><h3>Consultoría</h3><p>Consultoría artística y de producción. Contenidos con perspectiva de género y diversidad.</p><a href="consultoria.html">Ver consultoría →</a></div>
     </div>
   </section>
 
-  <section class="seccion" aria-labelledby="equipo-titulo">
+  <section class="seccion" id="equipo" aria-labelledby="equipo-titulo">
     <div class="seccion__cabecera">
       <h2 class="etiqueta" id="equipo-titulo">Equipo</h2>
     </div>
@@ -149,6 +157,6 @@
 </dialog>
 
 <script src="js/proyectos.js"></script>
-<script src="js/variante.js?v=7"></script>
+<script src="js/variante.js?v=9"></script>
 </body>
 </html>

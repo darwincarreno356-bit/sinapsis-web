@@ -46,6 +46,23 @@
   });
   menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", cerrarMenu); });
 
+  /* ---------- Submenú de "Nosotros" ----------
+     Computadora: se abre al pasar el mouse o con clic. Celular: se despliega dentro del menú. */
+  document.querySelectorAll(".menu__item--desplegable").forEach(function (item) {
+    var toggle = item.querySelector(".menu__toggle");
+    function abrir(si) {
+      item.classList.toggle("abierto", si);
+      toggle.setAttribute("aria-expanded", String(si));
+    }
+    toggle.addEventListener("click", function () { abrir(!item.classList.contains("abierto")); });
+    if (!esTactil) {
+      item.addEventListener("mouseenter", function () { if (window.innerWidth > 860) abrir(true); });
+      item.addEventListener("mouseleave", function () { if (window.innerWidth > 860) abrir(false); });
+    }
+    document.addEventListener("click", function (e) { if (!item.contains(e.target) && window.innerWidth > 860) abrir(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") abrir(false); });
+  });
+
   /* ---------- Tarjeta de proyecto ---------- */
   function crear(tag, clase, texto) {
     var el = document.createElement(tag);
@@ -153,7 +170,7 @@
     var desdeLink = FILTROS[location.hash.replace("#", "")];
     filtrar(desdeLink || "todos");
 
-    var listaConsultorias = document.getElementById("consultorias");
+    var listaConsultorias = document.getElementById("consultorias");  // ya no se usa: pasó a consultoria.html
     if (listaConsultorias) {
       proyectos.filter(soloConsultoria).forEach(function (p) {
         var li = crear("li");

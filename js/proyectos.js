@@ -33,7 +33,7 @@ window.PROYECTOS = [
     "formato": "Diario, primetime",
     "canal": "NBC Telemundo / 360Powwow",
     "paises": "Estados Unidos",
-    "descripcion": "Reality de competencia física y de conocimientos para el mercado hispano de EE. UU. Idea original y co-desarrollo.",
+    "descripcion": "Reality de competencia física y de conocimientos. Programa diario en primetime para el mercado hispano de los Estados Unidos. Creación de la idea original y co-desarrollo junto a 360Powwow y NBC Telemundo.",
     "premios": "",
     "video": {
       "plataforma": "youtube",
@@ -54,7 +54,7 @@ window.PROYECTOS = [
     "formato": "",
     "canal": "América TV / Latina / Bolivisión",
     "paises": "Argentina, Perú, Bolivia",
-    "descripcion": "Gameshow periodístico interactivo. Versiones en Animales Sueltos (2016), Pamela a la Tarde (2019), Latina (2018) y Bolivisión (2020/2021).",
+    "descripcion": "Gameshow periodístico interactivo. Creación y desarrollo integral del formato. Versiones argentinas en Pamela a la Tarde (2019) y Animales Sueltos (2016) en América TV; versión Perú (2018, Latina); versión Bolivia (2020/2021, Bolivisión).",
     "premios": "",
     "video": {
       "plataforma": "youtube",
@@ -97,7 +97,7 @@ window.PROYECTOS = [
     "formato": "Diario y semanal",
     "canal": "El Nueve",
     "paises": "Argentina",
-    "descripcion": "Reality de competencia física, artística y de conocimientos. Desarrollo del formato, dinámica y juegos; producción, puesta al aire y dirección general.",
+    "descripcion": "Reality de competencia física, artística y de conocimientos. Conducido por Guillermo Catalano, Thiago Batistuta, Laura Fernández y «Pollo» Álvarez. Éxito en sus versiones diaria y semanal y en digital. Desarrollo del formato de la versión argentina, diseño de dinámica del show y juegos; producción, puesta al aire y dirección general.",
     "premios": "",
     "video": {
       "plataforma": "youtube",
@@ -120,7 +120,7 @@ window.PROYECTOS = [
     "canal": "TVP / Encuentro / Cont.ar",
     "paises": "Argentina, Polonia, Israel, Vaticano",
     "descripcion": "Proyecto transmedia documental: el genocidio nazi desde la mirada adolescente. Con la participación del Papa Francisco.",
-    "premios": "Premio Argentores 2019 Mejor Guion de Documental para TV; Primer Premio Voto del Público Jewish Film Festival Punta del Este 2019; nominado Martín Fierro",
+    "premios": "Premio Argentores 2019, Mejor Guion de Documental para Televisión; Primer Premio Voto del Público, Jewish Film Festival (Punta del Este, 2019); nominado a los Martín Fierro; declarada de Interés Educativo por la Honorable Cámara de Diputados de la Nación y por organismos provinciales",
     "video": {
       "plataforma": "youtube",
       "id": "QhnDhdu8F44"
@@ -141,7 +141,7 @@ window.PROYECTOS = [
     "canal": "TVP / Encuentro / Cont.ar",
     "paises": "Argentina",
     "descripcion": "Historias de vida que desafían los mandatos de género y exploran diversos recorridos en torno a las sexualidades.",
-    "premios": "Ganadora Concurso Nacional de Series Documentales 2017 (INCAA)",
+    "premios": "Ganadora del Concurso Nacional de Series Documentales 2017 (INCAA); declarada de interés por el Honorable Senado de la Nación",
     "video": {
       "plataforma": "youtube",
       "id": "VET7HuigXFE"
@@ -181,7 +181,7 @@ window.PROYECTOS = [
     "genero": "Infantil / Ciencia",
     "formato": "26 × 25",
     "canal": "Paka Paka / TVP",
-    "paises": "Argentina, Perú",
+    "paises": "Perú, Argentina",
     "descripcion": "Ciencia para toda la familia, conducido por Nazareno Casero. Adaptación del formato original peruano, grabado en Lima y Buenos Aires.",
     "premios": "Premio Fan Chile Mejor Serie Infantil de no ficción",
     "video": {
@@ -243,8 +243,8 @@ window.PROYECTOS = [
     "formato": "Serie web 13 × 13",
     "canal": "UN3 TV / Flow",
     "paises": "Argentina",
-    "descripcion": "Libro, producción y dirección general. Grabada en Corrientes.",
-    "premios": "Mejor Dirección Bawebfest y Rome Web Awards; Mejor Drama Indie Series Awards; Mejor Dramedy NYC Webfest; y más",
+    "descripcion": "Serie web dramedy. Libro, producción y dirección general. Grabada íntegramente en la provincia de Corrientes.",
+    "premios": "Mejor Dirección (Bawebfest y Rome Web Awards); medalla de plata Excellence Awards; Mejor Edición, Mejor Actor Protagónico y Mejor Trailer (Rome Web Awards); Mejor Actriz de Reparto y Mejor Banda Musical (Bawebfest); Mejor Drama (Indie Series Awards); Mejor Dramedy (NYC Webfest); nominada a Mejor Guion y Mejor Drama (Seoul Web Fest) y Mejor Actriz (Río Webfest); Selección Oficial Hollyweb Festival",
     "video": {
       "plataforma": "youtube",
       "id": "_odTz30yTEA"
@@ -264,7 +264,7 @@ window.PROYECTOS = [
     "formato": "26 × 10",
     "canal": "UN3 TV",
     "paises": "Argentina",
-    "descripcion": "Famosos entrevistados mientras están «perdidos en el espacio». Idea original, desarrollo, producción y postproducción con fx gráficos.",
+    "descripcion": "Serie de entrevistas y animación: los famosos se animan a una entrevista mientras están «perdidos en el espacio». Idea original, desarrollo, producción, realización y postproducción con fx gráficos.",
     "premios": "",
     "video": {
       "plataforma": "youtube",
@@ -369,7 +369,7 @@ window.PROYECTOS = [
     "formato": "",
     "canal": "Fox Life LATAM",
     "paises": "Latinoamérica",
-    "descripcion": "",
+    "descripcion": "Reality.",
     "premios": "",
     "video": {
       "plataforma": "youtube",

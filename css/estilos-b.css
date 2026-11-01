@@ -238,3 +238,52 @@ html[data-fuente] .cta-titulo { font-size: clamp(26px, 3.2vw, 44px); }
 .oficinas-linea { text-align: center; margin-top: clamp(40px, 5vw, 56px); }
 .oficinas-linea .redes { justify-content: center; }
 .pie-linea { justify-content: center; gap: 8px 28px; }
+
+/* ==========================================================================
+   Submenú de "Nosotros" y página de Consultoría (01/11/2026)
+   ========================================================================== */
+.submenu { background: var(--fondo); border-color: var(--linea); min-width: 320px; }
+.submenu a { color: var(--texto-2); }
+.submenu a:hover, .submenu a[aria-current="page"] { color: var(--texto); background: var(--fondo-2); }
+.menu__toggle { font: inherit; }
+
+/* Consultoría artística y de producción: logo + texto, en dos columnas */
+.consultorias { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 40px; }
+.consultoria { display: grid; grid-template-columns: 120px 1fr; gap: 20px; align-items: start; }
+.consultoria__logo {
+  aspect-ratio: 3 / 2; border-radius: var(--radio); background: var(--fondo-2);
+  display: grid; place-items: center; overflow: hidden;
+}
+/* Logos en blanco sobre la placa azul (vienen en color sobre blanco) */
+.consultoria__logo img {
+  max-width: 72%; max-height: 64%; object-fit: contain;
+  filter: grayscale(1) invert(1) brightness(1.6) contrast(0.9);
+  mix-blend-mode: screen;
+}
+.consultoria h3 { margin: 0 0 6px; font-size: 18px; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; }
+.consultoria p { margin: 0 0 4px; color: var(--texto-2); font-size: 15px; }
+.consultoria .anio { display: inline-block; margin-top: 4px; font-size: 12px; letter-spacing: 0.14em; color: var(--azul-claro); }
+
+/* Perspectiva de género y diversidad */
+.enlace { color: var(--texto); border-bottom: 1px solid var(--azul-claro); }
+.enlace:hover { color: var(--azul-claro); }
+.genero__servicios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 12px; }
+.genero__servicios h3 { margin: 0 0 10px; font-size: 13px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--texto); }
+.genero__servicios p { margin: 0 0 10px; }
+.genero__proyectos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.genero__img { aspect-ratio: 16 / 10; border-radius: var(--radio); overflow: hidden; background: var(--fondo-2); display: grid; place-items: center; }
+.genero__img img { width: 100%; height: 100%; object-fit: cover; }
+.genero__img--logo img { width: 70%; height: auto; object-fit: contain; filter: invert(1); mix-blend-mode: screen; }
+.genero__proyectos .proyecto__credito { margin-top: 10px; text-align: left; }
+
+/* Proyectos: link a la página de Consultoría */
+.consultoria-enlace { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 24px; color: var(--texto-2); margin: 0; }
+
+@media (max-width: 1100px) {
+  .consultorias { grid-template-columns: 1fr; }
+  .genero__proyectos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .consultoria { grid-template-columns: 96px 1fr; gap: 14px; }
+  .genero__servicios { grid-template-columns: 1fr; }
+}
